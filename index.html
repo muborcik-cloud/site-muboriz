@@ -3,123 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muboriz Web Studio</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Сайт Мубориза</title>
 
     <style>
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: #0f0f0f;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4A90E2, #9013FE);
             color: white;
-        }
-
-        header {
-            background: linear-gradient(135deg, #007bff, #00d4ff);
-            padding: 60px 20px;
             text-align: center;
+            padding-top: 120px;
         }
 
-        header h1 {
-            font-size: 48px;
-            margin: 0;
-            animation: fadeIn 2s ease-in-out;
+        .card {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            margin: auto;
+            width: 80%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
         }
 
-        header p {
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        p {
             font-size: 20px;
+            margin-bottom: 25px;
             opacity: 0.9;
         }
 
         .btn {
-            background: white;
-            color: #007bff;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 600;
-            text-decoration: none;
             display: inline-block;
-            margin-top: 20px;
+            background: #fff;
+            color: #5A2DFE;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
             transition: 0.3s;
         }
 
         .btn:hover {
-            transform: scale(1.1);
-            background: #f1f1f1;
-        }
-
-        section {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .card {
-            background: #1b1b1b;
-            padding: 25px;
-            border-radius: 14px;
-            margin-top: 20px;
-            box-shadow: 0 0 20px #000;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 25px #007bff;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #101010;
-            color: #aaa;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            background: #e6e6e6;
+            transform: scale(1.05);
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Muboriz Web Studio</h1>
-    <p>Профессиональное создание сайтов под ключ</p>
-    <a class="btn" href="https://wa.me/992011900303">Заказать сайт</a>
-</header>
-
-<section>
-    <h2>Почему именно я?</h2>
-
     <div class="card">
-        <h3>🔥 Красивые современные сайты</h3>
-        <p>Создаю стильные, быстрые и профессиональные сайты любого уровня.</p>
-    </div>
+        <h1>Добро пожаловать!</h1>
+        <p>Это профессиональный сайт, созданный Муборизом.</p>
 
-    <div class="card">
-        <h3>⚡ Быстрая работа</h3>
-        <p>Ваш сайт будет готов намного быстрее, чем у других разработчиков.</p>
+        <a class="btn" href="about.html">Перейти на вторую страницу</a>
     </div>
-
-    <div class="card">
-        <h3>📱 Ваш номер</h3>
-        <p>+992 011 900 303 – всегда на связи.</p>
-    </div>
-</section>
-
-<footer>
-    © 2025 Muboriz Web Studio — Все права защищены
-</footer>
 
 </body>
 </html>
