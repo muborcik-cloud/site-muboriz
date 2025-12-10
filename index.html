@@ -5,104 +5,77 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Muboriz — Профессиональные сайты</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --bg1:#071028; --bg2:#0f2a4d;
-    --card:#0f2a3f;
-    --accent:#ff7a3d;
-    --green:#25d366;
-    --glass: rgba(255,255,255,0.06);
-    --muted: rgba(255,255,255,0.85);
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;font-family:Inter, Arial, sans-serif;
-    background: linear-gradient(180deg,var(--bg1),var(--bg2));
-    color:var(--muted); -webkit-font-smoothing:antialiased;
-    line-height:1.5;
-  }
+:root{
+  --bg1:#071028; --bg2:#09263f;
+  --card:#0f2540; --accent:#ff7a3d; --accent-2:#ff4b6e;
+  --green:#25d366; --glass: rgba(255,255,255,0.04);
+  --text: #e9f0ff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:Inter, Arial, sans-serif; background: linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
 
-  /* TOPBAR */
-  .topbar{
-    position:sticky;top:0;z-index:60;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 20px;background:linear-gradient(90deg, rgba(0,0,0,0.25), rgba(255,255,255,0.02));
-    border-bottom:1px solid rgba(255,255,255,0.03);
-  }
-  .logo{font-weight:800;color:#fff;letter-spacing:0.6px}
-  .nav{display:flex;gap:14px;align-items:center}
-  .nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
-  .nav a:hover{background:rgba(255,255,255,0.04)}
-  .cta{background:var(--accent);color:#fff;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:800}
+/* Topbar */
+.topbar{position:sticky;top:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:linear-gradient(90deg,rgba(0,0,0,0.25),rgba(255,255,255,0.02));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.logo{font-weight:800;font-size:18px;letter-spacing:0.6px}
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{color:var(--text);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600}
+.nav a:hover{background:rgba(255,255,255,0.03)}
+.cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:0 8px 28px rgba(255,122,61,0.12)}
 
-  .hamb{display:none;background:transparent;border:0;color:white;font-size:22px}
+/* Mobile menu btn */
+.hamb{display:none;background:transparent;border:0;color:var(--text);font-size:22px}
 
-  /* HERO */
-  .hero{
-    padding:60px 20px 30px; text-align:center;
-    max-width:1100px;margin:0 auto;
-  }
-  .hero h1{font-size:46px;margin:0;color:#fff;line-height:1.05}
-  .hero p{font-size:18px;color:rgba(255,255,255,0.9);margin:18px 0 0}
-  .hero-actions{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+/* Hero */
+.hero{padding:64px 20px 30px;text-align:center;max-width:1200px;margin:0 auto}
+.title{font-size:44px;margin:0;line-height:1.02;font-weight:800}
+.subtitle{font-size:18px;color:rgba(233,240,255,0.85);margin-top:10px}
+.hero-actions{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-  /* CARDS */
-  .panel{
-    margin:30px auto;max-width:1100px;padding:22px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    box-shadow:0 12px 40px rgba(2,6,23,0.6);
-  }
+/* Panel and grid */
+.panel{margin:30px auto;max-width:1100px;padding:20px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));box-shadow:0 12px 40px rgba(2,6,23,0.55)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.45)}
+.card h3{margin:0 0 10px;color:#fff}
+.card p{margin:0;color:rgba(255,255,255,0.85)}
 
-  .grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-  }
-  .card{
-    background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.4);
-  }
-  .card h3{margin:0 0 8px;color:#fff}
-  .card p{margin:0;color:rgba(255,255,255,0.85)}
+/* Portfolio */
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.port-item{border-radius:12px;overflow:hidden;background:#081223}
+.port-item img{width:100%;height:180px;object-fit:cover;display:block}
+.pi-body{padding:12px;color:var(--text)}
+.pi-body strong{display:block;margin-bottom:6px}
 
-  /* Portfolio */
-  .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
-  .port-item{border-radius:12px;overflow:hidden;background:#081223}
-  .port-item img{width:100%;height:160px;object-fit:cover;display:block}
-  .pi-body{padding:12px;color:rgba(255,255,255,0.95)}
-  .pi-body strong{display:block;margin-bottom:6px}
+/* Contact */
+.contact{display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:center}
+.box{background:var(--glass);padding:18px;border-radius:12px;min-width:260px;text-align:left}
+.tel{font-size:18px;font-weight:700;color:#fff}
 
-  /* Contact */
-  .contact{
-    display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:center;
-  }
-  .contact .box{background:var(--glass);padding:18px;border-radius:12px;min-width:260px;text-align:left}
-  .tel{font-size:18px;font-weight:700;color:#fff}
+/* Footer */
+footer{padding:28px 20px;text-align:center;color:rgba(255,255,255,0.7)}
 
-  /* Footer */
-  footer{padding:28px 20px;text-align:center;color:rgba(255,255,255,0.7)}
+/* Floating buttons */
+.float-wp,.float-call{position:fixed;right:18px;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:100;font-size:22px;box-shadow:0 12px 30px rgba(0,0,0,0.45)}
+.float-wp{bottom:92px;background:var(--green);color:#06110b}
+.float-call{bottom:18px;background:var(--accent);color:#fff}
 
-  /* Floating buttons */
-  .float-wp,.float-call{
-    position:fixed;right:18px;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:70;
-    color:#000;font-weight:800;box-shadow:0 12px 30px rgba(0,0,0,0.45);
-  }
-  .float-wp{bottom:92px;background:var(--green)}
-  .float-call{bottom:18px;background:var(--accent);color:#fff}
+/* Responsive */
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.portfolio-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){
+  .grid{grid-template-columns:1fr}.portfolio-grid{grid-template-columns:1fr}.nav{display:none}.hamb{display:block}
+  .title{font-size:28px}
+}
 
-  /* Responsive */
-  @media(max-width:980px){
-    .grid{grid-template-columns:repeat(2,1fr)}
-    .portfolio-grid{grid-template-columns:repeat(2,1fr)}
-  }
-  @media(max-width:680px){
-    .grid{grid-template-columns:1fr}
-    .portfolio-grid{grid-template-columns:1fr}
-    .nav{display:none}
-    .hamb{display:block}
-    .hero h1{font-size:30px}
-  }
-
-  /* small animations */
-  .fade{opacity:0;transform:translateY(12px);animation:fadeIn 0.7s ease forwards}
-  .delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.25s}.delay-3{animation-delay:0.45s}
-  @keyframes fadeIn{to{opacity:1;transform:none}}
+/* small reveal */
+.fade{opacity:0;transform:translateY(12px);animation:fadeIn .7s ease forwards}
+.delay-1{animation-delay:0.08s}.delay-2{animation-delay:0.22s}.delay-3{animation-delay:0.38s}
+@keyframes fadeIn{to{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -126,8 +99,8 @@
 <!-- hero -->
 <section id="home" class="hero" style="scroll-margin-top:80px">
   <div class="hero-inner">
-    <h1 class="fade delay-1">Привет — я <span style="color:var(--accent)">Мубориз</span></h1>
-    <p class="fade delay-2">Создаю красивые, быстрые и профессиональные сайты под ключ. Клиенты получают сайт, который продаёт.</p>
+    <h1 class="title fade delay-1">Привет — я <span style="color:var(--accent)">Мубориз</span></h1>
+    <p class="subtitle fade delay-2">Делаю ультра-профессиональные сайты: красивые, быстрые и продающие. Закажи — и получишь результат.</p>
 
     <div class="hero-actions fade delay-3">
       <a class="cta" href="https://wa.me/992011900303" target="_blank">💬 Написать в WhatsApp</a>
@@ -136,18 +109,9 @@
 
     <div class="panel fade delay-3" style="margin-top:22px">
       <div class="grid">
-        <div class="card">
-          <h3>Быстро</h3>
-          <p>Скорость разработки и быстрая загрузка сайта — гарантированы.</p>
-        </div>
-        <div class="card">
-          <h3>Красиво</h3>
-          <p>Современный дизайн, адаптивность и фирменный стиль.</p>
-        </div>
-        <div class="card">
-          <h3>Поддержка</h3>
-          <p>Техподдержка после сдачи проекта — обучу и помогу.</p>
-        </div>
+        <div class="card"><h3>Быстро</h3><p>Сайты, которые запускаются в короткие сроки.</p></div>
+        <div class="card"><h3>Качественно</h3><p>Чистый дизайн и адаптация под телефон.</p></div>
+        <div class="card"><h3>Поддержка</h3><p>Помогаю после сдачи проекта — настрою и объясню.</p></div>
       </div>
     </div>
   </div>
@@ -157,18 +121,9 @@
 <section id="services" class="panel" style="scroll-margin-top:80px">
   <h2 style="text-align:center;margin-top:0">Услуги</h2>
   <div class="grid fade delay-1">
-    <div class="card">
-      <h3>Мини-сайты (визитки)</h3>
-      <p>Одна страница — красиво, быстро и недорого.</p>
-    </div>
-    <div class="card">
-      <h3>Лендинги</h3>
-      <p>Конверсионные лендинги для продаж и заявок.</p>
-    </div>
-    <div class="card">
-      <h3>Интернет-магазины</h3>
-      <p>Каталог, корзина, прием платежей — под ключ.</p>
-    </div>
+    <div class="card"><h3>Мини-сайты</h3><p>Визитки и лендинги — быстро и дешево.</p></div>
+    <div class="card"><h3>Корпоративные сайты</h3><p>Сайт компании с несколькими разделами.</p></div>
+    <div class="card"><h3>Интернет-магазины</h3><p>Каталог, карточки товара и оплата.</p></div>
   </div>
 </section>
 
@@ -178,18 +133,18 @@
 
   <div class="portfolio-grid fade delay-1">
     <div class="port-item">
-      <img src="https://picsum.photos/seed/1/800/400" alt="proj1">
-      <div class="pi-body"><strong>Лендинг для кафе</strong><span>Красивая презентация меню. Быстро.</span></div>
+      <img src="https://picsum.photos/seed/p1/800/400" alt="proj1">
+      <div class="pi-body"><strong>Лендинг для кафе</strong><span>Красивое меню и онлайн-заказ.</span></div>
     </div>
 
     <div class="port-item">
-      <img src="https://picsum.photos/seed/2/800/400" alt="proj2">
-      <div class="pi-body"><strong>Интернет-магазин одежды</strong><span>Каталог, фильтры и карточки товара.</span></div>
+      <img src="https://picsum.photos/seed/p2/800/400" alt="proj2">
+      <div class="pi-body"><strong>Интернет-магазин</strong><span>Каталог, фильтры, корзина.</span></div>
     </div>
 
     <div class="port-item">
-      <img src="https://picsum.photos/seed/3/800/400" alt="proj3">
-      <div class="pi-body"><strong>Портфолио фотографа</strong><span>Галерея и контактная форма.</span></div>
+      <img src="https://picsum.photos/seed/p3/800/400" alt="proj3">
+      <div class="pi-body"><strong>Портфолио дизайнера</strong><span>Галерея работ и контакты.</span></div>
     </div>
   </div>
 </section>
@@ -197,15 +152,13 @@
 <!-- about -->
 <section id="about" class="panel" style="scroll-margin-top:80px">
   <h2 style="text-align:center;margin-top:0">Обо мне</h2>
-  <div style="max-width:900px;margin:18px auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center">
+  <div style="max-width:980px;margin:18px auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center">
     <div style="flex:0 0 220px">
-      <!-- если хочешь своё фото, положи файл muboriz.jpg в репозиторий рядом с index.html -->
       <img src="muboriz.jpg" alt="Muboriz" style="width:220px;height:220px;border-radius:12px;object-fit:cover;box-shadow:0 8px 30px rgba(0,0,0,0.5)">
     </div>
     <div style="flex:1;min-width:250px">
       <p style="font-size:18px;color:rgba(255,255,255,0.9)">
-        Привет — я <b>Muboriz</b>. Я создаю сайты: от простой визитки до интернет-магазина. Люблю чистый дизайн и быстрые решения.
-        Работать со мной просто — напиши в WhatsApp, и я быстро отвечу.
+        Привет — я <b>Мубориз</b>. Я создаю сайты: от мини-визитки до интернет-магазина. Работаю с вниманием к деталям и быстро.
       </p>
       <div style="margin-top:14px">
         <a class="cta" href="https://wa.me/992011900303" target="_blank">💬 Написать в WhatsApp</a>
@@ -226,41 +179,35 @@
     </div>
 
     <div class="box">
-      <div style="font-size:16px;color:rgba(255,255,255,0.9)">Адрес</div>
-      <div style="margin-top:8px">г. — (укажи город)</div>
-      <div style="margin-top:10px"><a href="mailto:you@example.com" style="color:var(--muted);text-decoration:none">you@example.com</a></div>
+      <div style="font-size:16px;color:rgba(255,255,255,0.9)">E-mail</div>
+      <div style="margin-top:8px"><a href="mailto:you@example.com" style="color:var(--text);text-decoration:none">you@example.com</a></div>
     </div>
   </div>
 </section>
 
-<footer>
-  Muboriz Web Studio — © <span id="yr"></span>
-</footer>
+<footer> Muboriz Web Studio — © <span id="yr"></span> </footer>
 
 <!-- floating -->
 <a class="float-wp" href="https://wa.me/992011900303" target="_blank" title="Написать в WhatsApp">💬</a>
 <a class="float-call" href="tel:+992011900303" title="Позвонить">📞</a>
 
 <script>
-  // year
+  // год в футере
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // smooth scroll for anchor links
+  // плавный переход
   function goto(id){
     const el = document.getElementById(id);
     if(!el) return;
     el.scrollIntoView({behavior:'smooth', block:'start'});
   }
 
-  // mobile nav toggle
+  // мобильное меню
   function toggleNav(){
     const nav = document.getElementById('nav');
     if(!nav) return;
     nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
   }
-
-  // small reveal animations
-  document.querySelectorAll('.fade').forEach(n => { /* classes already animate */ });
 </script>
 
 </body>
