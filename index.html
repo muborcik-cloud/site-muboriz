@@ -1,154 +1,99 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Мубориз Web Studio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт Мубориза</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef0f5;
+        }
 
-<style>
+        header {
+            background: linear-gradient(135deg, #0d0d0d, #1b1b1b);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0d1b2a;
-  color: white;
-}
+        nav {
+            background: #222;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
 
-/* Верхнее меню */
-nav {
-  background: #1b263b;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            background: #333;
+            border-radius: 8px;
+            transition: 0.25s;
+        }
 
-nav h1 {
-  font-size: 20px;
-  font-weight: bold;
-}
+        nav a:hover {
+            background: #555;
+        }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  margin-left: 15px;
-}
+        .hero {
+            padding: 40px;
+            text-align: center;
+            background: white;
+            margin: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+        }
 
-.page {
-  display: none;
-  padding: 25px;
-}
+        h2 {
+            margin-top: 0;
+        }
 
-.active {
-  display: block;
-}
+        .btn {
+            display: inline-block;
+            padding: 14px 22px;
+            margin: 10px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 17px;
+        }
 
-/* Блоки */
-.card {
-  background: #1b263b;
-  padding: 20px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
+        .btn-call {
+            background: #007BFF;
+        }
 
-img.portfolio-img {
-  width: 100%;
-  border-radius: 15px;
-  margin-top: 15px;
-}
-</style>
-
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
 
+<header>Профессиональный сайт — Мубориз</header>
+
 <nav>
-  <h1>Мубориз Web Studio</h1>
-  <div>
-    <a href="#" onclick="showPage('main')">Главная</a>
-    <a href="#" onclick="showPage('portfolio')">Портфолио</a>
-  </div>
+    <a href="page1.html">Обо мне</a>
+    <a href="page2.html">Услуги</a>
+    <a href="page3.html">Портфолио</a>
+    <a href="page4.html">Отзывы</a>
+    <a href="page5.html">Контакты</a>
 </nav>
 
-<!-- Главная страница -->
-<div id="main" class="page active">
+<div class="hero">
+    <h2>Добро пожаловать!</h2>
+    <p>Вы на профессиональном сайте Мубориза — разработчика красивых сайтов.</p>
 
-  <div class="card">
-    <h2>Создаю красивые, быстрые и профессиональные сайты</h2>
-    <p>Адаптирую под телефон, делаю под ключ. Клиенты довольны.</p>
-  </div>
-
-  <div class="card">
-    <h3>Услуги</h3>
-    <ul>
-      <li>Верстка сайтов</li>
-      <li>Лендинги</li>
-      <li>Интернет-магазины</li>
-      <li>Поддержка сайтов</li>
-      <li>Дизайн под ключ</li>
-    </ul>
-
-    <a href="https://wa.me/992XXXXXXXXX" style="
-      display:block;
-      background:#25D366;
-      padding:12px;
-      text-align:center;
-      color:white;
-      border-radius:12px;
-      margin-top:20px;
-      font-weight:bold;
-      text-decoration:none;">Написать в WhatsApp</a>
-
-    <a href="tel:+992XXXXXXXXX" style="
-      display:block;
-      background:#ff7b00;
-      padding:12px;
-      text-align:center;
-      color:white;
-      border-radius:12px;
-      margin-top:15px;
-      font-weight:bold;
-      text-decoration:none;">Позвонить</a>
-  </div>
-
+    <a class="btn" href="https://wa.me/992011900303">Написать в WhatsApp</a>
+    <a class="btn btn-call" href="tel:+992011900303">Позвонить</a>
 </div>
-
-<!-- ⭐ Вторая страница: ПОРТФОЛИО -->
-<div id="portfolio" class="page">
-
-  <div class="card">
-    <h2>Портфолио</h2>
-    <p>Здесь представлены мои работы. Все сайты адаптивные, быстрые и профессиональные.</p>
-  </div>
-
-  <div class="card">
-    <h3>Сайт №1</h3>
-    <img class="portfolio-img" src="https://via.placeholder.com/600x350" alt="">
-    <p>Современный лендинг для бизнеса.</p>
-  </div>
-
-  <div class="card">
-    <h3>Сайт №2</h3>
-    <img class="portfolio-img" src="https://via.placeholder.com/600x350" alt="">
-    <p>Интернет-магазин для продажи товаров.</p>
-  </div>
-
-  <div class="card">
-    <h3>Сайт №3</h3>
-    <img class="portfolio-img" src="https://via.placeholder.com/600x350" alt="">
-    <p>Мини-сайт портфолио для клиента.</p>
-  </div>
-
-</div>
-
-<script>
-function showPage(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(page).classList.add('active');
-}
-</script>
 
 </body>
 </html>
