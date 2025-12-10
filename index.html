@@ -1,69 +1,86 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Сайт Мубориза</title>
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4A90E2, #9013FE);
+            background: linear-gradient(135deg, #1f1c2c, #928dab);
             color: white;
             text-align: center;
-            padding-top: 120px;
         }
 
-        .card {
-            background: rgba(255,255,255,0.15);
-            padding: 30px;
-            margin: auto;
-            width: 80%;
-            max-width: 450px;
-            border-radius: 20px;
-            box-shadow: 0 0 25px rgba(0,0,0,0.3);
-            backdrop-filter: blur(10px);
+        header {
+            padding: 40px 20px;
         }
 
         h1 {
-            font-size: 38px;
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
         p {
-            font-size: 20px;
-            margin-bottom: 25px;
+            font-size: 18px;
             opacity: 0.9;
+        }
+
+        .container {
+            padding: 30px;
         }
 
         .btn {
             display: inline-block;
-            background: #fff;
-            color: #5A2DFE;
-            padding: 14px 30px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
+            background: #25d366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
             text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
             transition: 0.3s;
         }
 
         .btn:hover {
-            background: #e6e6e6;
-            transform: scale(1.05);
+            background: #1faa55;
+        }
+
+        footer {
+            margin-top: 50px;
+            opacity: 0.7;
+            font-size: 14px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="card">
-        <h1>Добро пожаловать!</h1>
-        <p>Это профессиональный сайт, созданный Муборизом.</p>
+    <header>
+        <h1>Сайт Мубориза</h1>
+        <p>Создаю красивые и профессиональные сайты для клиентов</p>
+    </header>
 
-        <a class="btn" href="about.html">Перейти на вторую страницу</a>
+    <div class="container">
+        <h2>Связаться со мной</h2>
+        <p>Нажми кнопку ниже, и ты сможешь написать мне прямо в WhatsApp</p>
+
+        <!-- ТВОЙ WHATSAPP -->
+        <a
+            class="btn"
+            href="https://wa.me/992011900303"
+            target="_blank"
+        >
+            💬 Написать в WhatsApp
+        </a>
     </div>
+
+    <footer>
+        © 2025 Мубориз — создание сайтов
+    </footer>
 
 </body>
 </html>
