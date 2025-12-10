@@ -253,3 +253,142 @@ footer{padding:28px 20px;text-align:center;color:rgba(255,255,255,0.7)}
 
   </div>
 </section>
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Цены – Ваш сайт</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #f0f4ff;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 38px;
+        margin-top: 30px;
+        color: #1a237e;
+        font-weight: bold;
+    }
+
+    .pricing-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        padding: 40px 20px;
+    }
+
+    .card {
+        background: white;
+        width: 300px;
+        border-radius: 18px;
+        padding: 25px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        transition: 0.35s;
+        border: 2px solid transparent;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        border-color: #3f51b5;
+        box-shadow: 0 18px 30px rgba(0,0,0,0.25);
+    }
+
+    .card h2 {
+        color: #283593;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .price {
+        font-size: 32px;
+        color: #1a237e;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        padding-left: 20px;
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        background: #3949ab;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #283593;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>Тарифы на создание сайтов</h1>
+
+<div class="pricing-container">
+
+    <!-- Мини-сайт -->
+    <div class="card">
+        <h2>Мини-сайт</h2>
+        <p class="price">100 сомони</p>
+        <ul>
+            <li>1 страница</li>
+            <li>Быстрый и лёгкий дизайн</li>
+            <li>Адаптивная версия (телефон + ПК)</li>
+            <li>Подключение WhatsApp</li>
+        </ul>
+        <a class="btn" href="https://wa.me/your_number?text=Хочу%20мини-сайт">Заказать</a>
+    </div>
+
+    <!-- Обычный сайт -->
+    <div class="card">
+        <h2>Сайт 2–3 страницы</h2>
+        <p class="price">200 сомони</p>
+        <ul>
+            <li>3 страницы</li>
+            <li>Профессиональный дизайн</li>
+            <li>Фото, текст, контакты</li>
+            <li>Поддержка 7 дней</li>
+        </ul>
+        <a class="btn" href="https://wa.me/your_number?text=Хочу%20сайт%202-3%20страницы">Заказать</a>
+    </div>
+
+    <!-- Большой сайт -->
+    <div class="card">
+        <h2>Большой сайт</h2>
+        <p class="price">400 сомони</p>
+        <ul>
+            <li>5–10 страниц</li>
+            <li>Красивый современный дизайн</li>
+            <li>Галерея, фото, каталог</li>
+            <li>Оптимизация скорости</li>
+        </ul>
+        <a class="btn" href="https://wa.me/your_number?text=Хочу%20большой%20сайт">Заказать</a>
+    </div>
+
+</div>
+
+</body>
+</html>
