@@ -266,3 +266,152 @@ function sendOrderForm(){
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Premium — Второй сайт</title>
+
+<style>
+/* Основной фон */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #e6e6e6;
+    overflow-x: hidden;
+}
+
+/* Анимированное золотое свечение */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #c79d2f; }
+    100% { text-shadow: 0 0 20px #ffd36a; }
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(90deg, #000, #111);
+    padding: 20px 0;
+    text-align: center;
+    color: #f2c84b;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    animation: glow 2s infinite alternate;
+}
+
+/* Меню */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+}
+
+nav a {
+    color: #f2c84b;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Контент */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.block {
+    background: #0d0d0d;
+    border: 1px solid #2e2e2e;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 20px rgba(242,200,75,0.1);
+    transition: 0.4s;
+}
+
+.block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(242,200,75,0.25);
+}
+
+.title {
+    font-size: 26px;
+    color: #f2c84b;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.text {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Кнопка "Подписаться на мой второй сайт" */
+.subscribe-btn {
+    display: inline-block;
+    padding: 15px 25px;
+    margin-top: 10px;
+    background: #f2c84b;
+    color: #000;
+    font-weight: 900;
+    font-size: 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.subscribe-btn:hover {
+    background: #ffe089;
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<header>BLACK PREMIUM — МОЙ ВТОРОЙ САЙТ</header>
+
+<nav>
+    <a href="#">Главная</a>
+    <a href="#">Обо мне</a>
+    <a href="#">Услуги</a>
+    <a href="#">Контакты</a>
+</nav>
+
+<div class="container">
+
+    <div class="block">
+        <div class="title">Добро пожаловать</div>
+        <div class="text">
+            Это мой новый второй профессиональный сайт в стиле Black Premium.
+        </div>
+
+        <a class="subscribe-btn" href="#">Подписывайтесь на мой второй сайт</a>
+    </div>
+
+    <div class="block">
+        <div class="title">Почему мой сайт — профессиональный?</div>
+        <div class="text">
+            — Чёрно-золотой стиль<br>
+            — Премиум анимации<br>
+            — Меню<br>
+            — Красивый интерфейс<br>
+            — Всё выглядит дорого и идеально<br>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
