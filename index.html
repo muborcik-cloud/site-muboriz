@@ -271,3 +271,205 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Premium</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #0a0a0a;
+            color: #f4f4f4;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* ====== PREMIUM MENU ====== */
+        nav {
+            width: 100%;
+            background: #111;
+            border-bottom: 2px solid #d4a537;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #d4a537;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #d4a537;
+            color: #000;
+        }
+        /* =========================== */
+
+        header {
+            padding: 40px 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d4a537;
+            margin: 0;
+            font-size: 42px;
+            font-weight: 700;
+        }
+
+        p.subtitle {
+            margin: 10px 0 0;
+            color: #bbbbbb;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: #111;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            border: 1px solid #2c2c2c;
+            box-shadow: 0 0 15px rgba(212, 165, 55, 0.15);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #d4a537;
+            box-shadow: 0 0 25px rgba(212, 165, 55, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 15px;
+            background: #d4a537;
+            color: #000;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #f2c968;
+        }
+
+        /* FIXED ACTION BUTTONS */
+        .action-buttons {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .action-btn {
+            width: 60px;
+            height: 60px;
+            background: #d4a537;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(212, 165, 55, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 28px;
+            color: black;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .action-btn:hover {
+            box-shadow: 0 0 20px rgba(212, 165, 55, 0.7);
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ====== MENU ====== -->
+<nav>
+    <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Услуги</a></li>
+        <li><a href="#">Портфолио</a></li>
+        <li><a href="#">Контакты</a></li>
+    </ul>
+</nav>
+<!-- ================== -->
+
+<header>
+    <h1>Black Premium</h1>
+    <p class="subtitle">Элитный стиль. Премиум дизайн. Высокий уровень.</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Создание сайтов</h2>
+        <p>Краси, удобно, премиально. Работаем быстро и качественно.</p>
+        <a class="btn" href="https://wa.me/992011900303?text=Здравствуйте!%20Хочу%20заказать%20сайт">
+            Заказать сайт
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Почему мы?</h2>
+        <p>Стиль, качество, скорость. Лучший премиум-дизайн в регионе.</p>
+    </div>
+
+    <div class="card">
+        <h2>Цены</h2>
+        <p>Сайты от 500 до 3000 сомони.</p>
+    </div>
+</div>
+
+<!-- ACTION BUTTONS -->
+<div class="action-buttons">
+    <a class="action-btn" href="https://wa.me/992011900303?text=Здравствуйте!%20Есть%20вопрос">💬</a>
+    <a class="action-btn" href="tel:+992011900303">📞</a>
+</div>
+
+<footer>
+    © 2025 Black Premium. Все права защищены.
+</footer>
+
+</body>
+</html>
