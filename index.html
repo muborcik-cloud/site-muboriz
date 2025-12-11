@@ -152,3 +152,99 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой сайт</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0d0d0d;
+        color: white;
+    }
+
+    nav {
+        background: #111;
+        padding: 15px 25px;
+        display: flex;
+        gap: 30px;
+        border-bottom: 2px solid gold;
+    }
+
+    nav a {
+        color: gold;
+        text-decoration: none;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: white;
+        text-shadow: 0 0 12px gold;
+    }
+
+    .section {
+        display: none;
+        padding: 40px;
+    }
+
+    .active {
+        display: block;
+    }
+
+    h1 {
+        color: gold;
+        font-size: 42px;
+        margin-bottom: 20px;
+    }
+
+    .info-box {
+        border-left: 4px solid gold;
+        padding-left: 20px;
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 1.7;
+    }
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a onclick="showSection('home')">Главная</a>
+    <a onclick="showSection('about')">Обо мне</a>
+</nav>
+
+<!-- Главная -->
+<div id="home" class="section active">
+    <h1>Добро пожаловать!</h1>
+    <p>Это мой профессиональный сайт, где я делаю крутые сайты на заказ.</p>
+</div>
+
+<!-- О себе -->
+<div id="about" class="section">
+    <h1>Обо мне</h1>
+    <div class="info-box">
+        <p><b>Имя:</b> Муборчик</p>
+        <p><b>Кто я:</b> Создатель профессиональных сайтов</p>
+        <p><b>Мой номер:</b> +992 00 000 00 00</p>
+        <p><b>Что я умею:</b> Создаю дорогие, красивые и современные сайты</p>
+        <p><b>Где принимаю заказы:</b> WhatsApp, Telegram</p>
+    </div>
+</div>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
