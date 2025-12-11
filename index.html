@@ -1,202 +1,311 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Профессиональные сайты — быстро и красиво</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MUBORIZ — Профессиональная веб-разработка в Душанбе</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b1220; --card:#0f1724; --muted:#98a0b3;
-      --accent:#0a84ff; --accent2:#ff7a3d; --green:#25D366;
-      --glass: rgba(255,255,255,0.04);
-      --radius:14px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:
-      linear-gradient(180deg,#071028 0%, #0e1b31 100%);color:#eaf0ff;-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1200px;margin:0 auto;padding:28px}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-    /* header */
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .brand{font-weight:800;letter-spacing:0.6px;font-size:20px}
-    nav{display:flex;gap:12px}
-    nav a{color:rgba(234,240,255,0.9);padding:8px 12px;border-radius:10px;font-weight:600}
-    nav a:hover{background:rgba(255,255,255,0.03)}
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #050b18;
+            color: #eef2ff;
+            overflow-x: hidden;
+        }
 
-    /* hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:18px}
-    @media(max-width:920px){.hero{grid-template-columns:1fr;}}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:18px;box-shadow:0 18px 50px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.02)}
-    .title{font-size:36px;margin:0 0 10px;line-height:1.02;font-weight:800}
-    .lead{color:var(--muted);margin-bottom:18px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{padding:12px 16px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 12px 36px rgba(10,132,255,0.08)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:#eaf0ff}
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 16px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(14px);
+            background: rgba(0,0,0,0.25);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #0af, #f53);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        nav a {
+            margin-left: 20px;
+            color: #c6d0ff;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #fff;
+        }
 
-    /* profile */
-    .profile{border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(2,6,23,0.6)}
-    .profile img{width:100%;height:100%;object-fit:cover;display:block}
+        /* HERO */
+        .hero {
+            padding: 160px 50px 100px;
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-title {
+            font-size: 44px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero-sub {
+            font-size: 18px;
+            color: #c7d2fe;
+            margin-bottom: 25px;
+        }
+        .btn-main {
+            padding: 14px 22px;
+            background: linear-gradient(90deg, #0a84ff, #ff4c2f);
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 12px;
+        }
+        .btn-outline {
+            padding: 14px 22px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .hero-img {
+            width: 100%;
+            height: 420px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.55);
+        }
+        .hero-img img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
 
-    /* features */
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-    @media(max-width:920px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:520px){.grid{grid-template-columns:1fr}}
-    .card{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .card h3{margin:0 0 8px}
-    .card p{margin:0;color:var(--muted)}
+        /* SECTION */
+        section { padding: 60px 50px; }
+        h2 {
+            font-size: 34px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
 
-    /* portfolio */
-    .section{margin-top:28px}
-    .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    @media(max-width:920px){.port-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:520px){.port-grid{grid-template-columns:1fr}}
-    .thumb{border-radius:12px;overflow:hidden}
-    .thumb img{width:100%;height:200px;object-fit:cover;display:block}
+        /* SERVICES */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+        }
+        .card {
+            padding: 28px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .card h3 {
+            margin-bottom: 12px;
+        }
+        .card p {
+            color: #a9b3d9;
+        }
 
-    /* prices */
-    .prices{display:flex;gap:12px;margin-top:18px}
-    @media(max-width:920px){.prices{flex-direction:column}}
-    .price{flex:1;background:linear-gradient(180deg,#081428,#0b1730);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    .price h4{margin:0 0 8px}
-    .price .cost{font-size:22px;color:var(--accent);font-weight:800}
+        /* PORTFOLIO */
+        .portfolio img {
+            width: 100%; 
+            height: 240px; 
+            object-fit: cover; 
+            border-radius: 16px;
+            margin-bottom: 14px;
+        }
 
-    /* contact */
-    .contact{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-top:20px;flex-wrap:wrap}
-    .contact .info{background:linear-gradient(180deg,#061022,#0c1830);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+        /* PRICES */
+        .price-box {
+            margin-top: 14px;
+            padding: 22px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .cost {
+            font-size: 24px;
+            font-weight: 800;
+            margin: 6px 0;
+            color: #0af;
+        }
 
-    /* footer */
-    footer{margin-top:40px;padding:28px 0;text-align:center;color:var(--muted)}
+        /* CONTACT */
+        .contact-box {
+            padding: 22px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        .contact-box a {
+            color: #0af;
+            font-weight: 700;
+        }
 
-    /* floating actions */
-    .floats{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:120}
-    .float{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;box-shadow:0 12px 36px rgba(2,6,23,0.14)}
-    .float.wh{background:var(--green)}
-    .float.call{background:var(--accent2)}
+        /* FOOTER */
+        footer {
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            color: #8e9acd;
+        }
 
-    /* subtle animation */
-    .fade{opacity:0;transform:translateY(12px);animation:fadeIn .7s ease forwards}
-    .delay-1{animation-delay:.06s}.delay-2{animation-delay:.18s}.delay-3{animation-delay:.34s}
-    @keyframes fadeIn{to{opacity:1;transform:none}}
-  </style>
+        /* FLOAT ACTIONS */
+        .floats {
+            position: fixed;
+            right: 20px;
+            bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            z-index: 10000;
+        }
+        .floats a {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            text-decoration: none;
+        }
+        .wa { background: #25D366; }
+        .call { background: #ff4c2f; }
+
+        @media(max-width:900px){
+            .hero{grid-template-columns:1fr}
+            nav{display:none}
+        }
+        @media(max-width:600px){
+            section, .hero{padding:40px 20px}
+            header{padding:16px 20px}
+        }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <!-- header -->
-    <header>
-      <div class="brand">MUBORIZ</div>
-      <nav>
+
+<header>
+    <div class="logo">MUBORIZ</div>
+    <nav>
         <a href="#home">Главная</a>
         <a href="#services">Услуги</a>
         <a href="#portfolio">Портфолио</a>
         <a href="#prices">Цены</a>
         <a href="#contacts">Контакты</a>
-      </nav>
-    </header>
+    </nav>
+</header>
 
-    <!-- hero -->
-    <section id="home" class="hero">
-      <div class="hero-card fade delay-1">
-        <h1 class="title">Делаю профессиональные сайты — красиво и быстро</h1>
-        <p class="lead">Уникальный дизайн, адаптация под телефон, настройка контактов и поддержка после сдачи.</p>
+<!-- HERO -->
+<section class="hero" id="home">
+    <div>
+        <h1 class="hero-title">Создаю мощные сайты в Душанбе — быстро, красиво, профессионально</h1>
+        <p class="hero-sub">Современный дизайн, адаптив, WhatsApp, звонок, портфолио, SEO — всё включено.</p>
 
-        <div class="actions">
-          <a class="btn btn-primary" href="https://wa.me/992011900303" target="_blank">💬 Написать в WhatsApp</a>
-          <a class="btn btn-ghost" href="tel:+992011900303">📞 Позвонить</a>
+        <a href="https://wa.me/992011900303" class="btn-main">💬 Написать в WhatsApp</a>
+        <a href="tel:+992011900303" class="btn-outline">📞 Позвонить</a>
+    </div>
+
+    <div class="hero-img">
+        <img src="https://picsum.photos/seed/muboriz/900/900">
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Услуги</h2>
+
+    <div class="grid-3">
+        <div class="card">
+            <h3>Сайт-визитка</h3>
+            <p>Идеально для быстрого старта. Контакты, WhatsApp, 1 страница.</p>
         </div>
-
-        <div class="grid" style="margin-top:18px">
-          <div class="card"><h3>Быстро</h3><p>Сайты запускаются в короткие сроки.</p></div>
-          <div class="card"><h3>Качественно</h3><p>Чистый код и адаптация под любой экран.</p></div>
-          <div class="card"><h3>Поддержка</h3><p>Помогу настроить и после сдачи проекта.</p></div>
+        <div class="card">
+            <h3>Сайт компании</h3>
+            <p>3–5 страниц, услуги, портфолио, отзывы, адаптив.</p>
         </div>
-      </div>
-
-      <aside class="profile fade delay-2">
-        <div style="width:100%;max-width:420px">
-          <img src="muboriz.jpg" alt="Muboriz photo" onerror="this.src='https://picsum.photos/seed/mub/800/800'">
+        <div class="card">
+            <h3>Большой сайт</h3>
+            <p>До 10 страниц, SEO, галереи, невероятный дизайн.</p>
         </div>
-      </aside>
-    </section>
+    </div>
+</section>
 
-    <!-- services -->
-    <section id="services" class="section fade delay-1">
-      <h2>Услуги</h2>
-      <div class="grid" style="margin-top:12px">
-        <div class="card"><h3>Мини-сайт</h3><p>1 страница, контакты, быстрая сборка.</p></div>
-        <div class="card"><h3>Сайт 2–3 страницы</h3><p>Главная, услуги, контакты.</p></div>
-        <div class="card"><h3>Большой сайт</h3><p>5–10 страниц, портфолио, галереи.</p></div>
-      </div>
-    </section>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+    <h2>Портфолио</h2>
 
-    <!-- portfolio -->
-    <section id="portfolio" class="section fade delay-2">
-      <h2>Портфолио — Примеры работ</h2>
-      <div class="port-grid" style="margin-top:12px">
-        <div class="thumb"><img src="https://picsum.photos/seed/p1/800/500" alt=""></div>
-        <div class="thumb"><img src="https://picsum.photos/seed/p2/800/500" alt=""></div>
-        <div class="thumb"><img src="https://picsum.photos/seed/p3/800/500" alt=""></div>
-      </div>
-    </section>
+    <div class="grid-3 portfolio">
+        <img src="https://picsum.photos/seed/p1/900/600">
+        <img src="https://picsum.photos/seed/p2/900/600">
+        <img src="https://picsum.photos/seed/p3/900/600">
+    </div>
+</section>
 
-    <!-- prices -->
-    <section id="prices" class="section fade delay-3">
-      <h2>Цены</h2>
-      <div class="prices">
-        <div class="price">
-          <h4>Мини-сайт</h4>
-          <div class="cost">100 сомони</div>
-          <p style="color:var(--muted)">1 страница • WhatsApp • Быстрая сборка</p>
+<!-- PRICES -->
+<section id="prices">
+    <h2>Цены</h2>
+
+    <div class="grid-3">
+        <div class="price-box">
+            <h3>Мини-сайт</h3>
+            <p class="cost">100 сомони</p>
+            <p>1 страница • WhatsApp • Звонок</p>
         </div>
-        <div class="price">
-          <h4>Сайт 2–3 страницы</h4>
-          <div class="cost">200 сомони</div>
-          <p style="color:var(--muted)">Главная • Услуги • Контакты</p>
+        <div class="price-box">
+            <h3>Стандарт</h3>
+            <p class="cost">200 сомони</p>
+            <p>3–5 страниц • Портфолио • Адаптив</p>
         </div>
-        <div class="price">
-          <h4>Большой сайт</h4>
-          <div class="cost">400+ сомони</div>
-          <p style="color:var(--muted)">5–10 страниц • Галерея • SEO</p>
+        <div class="price-box">
+            <h3>Премиум</h3>
+            <p class="cost">400+ сомони</p>
+            <p>10 страниц • Мощный дизайн • SEO</p>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- contacts -->
-    <section id="contacts" class="section fade delay-1">
-      <h2>Контакты</h2>
-      <div class="contact">
-        <div class="info">
-          <strong>Написать в WhatsApp:</strong><br>
-          <a href="https://wa.me/992011900303" style="color:var(--accent)">💬 Написать</a>
-          <div style="height:8px"></div>
-          <strong>Позвонить:</strong><br>
-          <a href="tel:+992011900303" style="color:var(--accent)">📞 Позвонить</a>
-        </div>
+<!-- CONTACT -->
+<section id="contacts">
+    <h2>Контакты</h2>
 
-        <div style="min-width:240px">
-          <p style="color:var(--muted)">Загружай свои фото в репозиторий с именем <code>muboriz.jpg</code> — они появятся в профиле и галерее.</p>
-        </div>
-      </div>
-    </section>
+    <div class="contact-box">
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/992011900303">Написать</a></p>
+        <p><strong>Телефон:</strong> <a href="tel:+992011900303">Позвонить</a></p>
+        <p style="margin-top:10px;color:#a9b3d9">Работаю по Душанбе. Быстро, качественно, профессионально.</p>
+    </div>
+</section>
 
-    <footer>
-      © <span id="yr"></span> Muboriz — создание сайтов · Душанбе
-    </footer>
-  </div>
+<footer>
+    © <span id="year"></span> MUBORIZ — создание сайтов в Душанбе
+</footer>
 
-  <!-- floating buttons -->
-  <div class="floats">
-    <a class="float wh" href="https://wa.me/992011900303" target="_blank" title="Написать в WhatsApp">💬</a>
-    <a class="float call" href="tel:+992011900303" title="Позвонить">📞</a>
-  </div>
+<div class="floats">
+    <a class="wa" href="https://wa.me/992011900303">💬</a>
+    <a class="call" href="tel:+992011900303">📞</a>
+</div>
 
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-    // reveal small animation delays
-    document.querySelectorAll('.fade').forEach((el,i)=> el.style.animationDelay=(i*0.06)+'s');
-  </script>
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
