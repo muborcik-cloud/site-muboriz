@@ -1,278 +1,156 @@
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Muboriz — профессиональная разработка сайтов</title>
-<style>
-  :root{
-    --bg:#0f1724; /* тёмный фон */
-    --card:#0f1724;
-    --accent:#ff7a2a;
-    --green:#25D366;
-    --soft:#f6f7fb;
-    --muted:#9aa4b2;
-  }
-  /* Базовая стилизация */
-  *{box-sizing:border-box}
-  body{
-    margin:0;font-family:Inter,system-ui,Arial,sans-serif;
-    background: linear-gradient(180deg,#0b1220 0%, #0f1a2b 60%);
-    color:var(--soft);
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.5;
-  }
-  header{
-    position:sticky;top:0;z-index:40;
-    background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    backdrop-filter: blur(6px);
-    padding:14px 18px;display:flex;align-items:center;justify-content:space-between;
-    border-bottom:1px solid rgba(255,255,255,0.03);
-  }
-  .brand{font-weight:800;letter-spacing:1px;font-size:20px;color:#fff}
-  .hamb{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;cursor:pointer}
-  nav{position:fixed;right:16px;top:64px;background:transparent}
-  /* Hero */
-  .hero{padding:42px 18px 36px;text-align:center}
-  .hero h1{font-size:34px;margin:8px 0 6px;font-weight:800;color:#fff}
-  .hero p{color:var(--muted);max-width:780px;margin:0 auto 18px}
-  .cta{display:inline-block;background:linear-gradient(90deg,var(--accent), #ff9b52);color:#fff;padding:12px 22px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 8px 30px rgba(255,122,42,0.18)}
-  /* Card */
-  .card-wrap{max-width:920px;margin:20px auto;padding:18px}
-  .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
-  .card h2{color:#fff;margin:0 0 12px;font-size:22px}
-  .card p{color:var(--muted)}
-  /* Services grid */
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
-  .service{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;color:var(--soft);box-shadow:0 8px 30px rgba(0,0,0,0.6)}
-  .service h3{margin:0 0 8px;font-size:18px}
-  /* Pricing */
-  .pricing{display:flex;gap:14px;margin-top:18px}
-  .price-card{flex:1;background:#fff;border-radius:14px;padding:18px;color:#0b1220;text-align:center}
-  .price-card h4{margin:0 0 8px;font-size:18px}
-  .price-amount{font-size:28px;font-weight:800;color:var(--accent);margin-bottom:8px}
-  .price-card p{color:#4b5563}
-  .btn-secondary{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
-  /* Gallery */
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-  .gallery img{width:100%;height:140px;object-fit:cover;border-radius:12px;border:6px solid rgba(255,255,255,0.02)}
-  /* Floating buttons */
-  .float-wrap{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:60}
-  .float{
-    width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 26px rgba(2,6,23,0.6);cursor:pointer;border:6px solid rgba(255,255,255,0.03);
-  }
-  .float.wh{background:var(--green);color:#fff}
-  .float.call{background:#ff7a2a;color:#fff}
-  .float a{display:flex;align-items:center;justify-content:center;color:inherit;text-decoration:none;width:100%;height:100%;border-radius:50%}
-  /* Footer */
-  footer{padding:28px 18px;text-align:center;color:var(--muted);font-size:14px}
-  /* Responsive */
-  @media(max-width:920px){
-    .grid{grid-template-columns:repeat(2,1fr)}
-    .gallery{grid-template-columns:repeat(2,1fr)}
-    .pricing{flex-direction:column}
-  }
-  @media(max-width:520px){
-    .grid{grid-template-columns:1fr}
-    .gallery{grid-template-columns:1fr}
-    .hero h1{font-size:28px}
-  }
-  /* menu panel */
-  .menu-panel{position:fixed;left:0;top:0;bottom:0;width:260px;background:linear-gradient(180deg,#071026 0,#0c1626 100%);padding:18px;transform:translateX(-120%);transition:transform .28s;z-index:80;border-right:1px solid rgba(255,255,255,0.03)}
-  .menu-panel.open{transform:translateX(0)}
-  .menu-panel a{display:block;color:var(--soft);text-decoration:none;padding:10px;border-radius:8px;margin-bottom:6px}
-  .muted{color:var(--muted);font-size:14px}
-  .badge{display:inline-block;background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;font-weight:700}
-</style>
-</head>
-<body>
-
-<header>
-  <div class="brand">Muboriz Web Studio</div>
-  <div style="display:flex;gap:12px;align-items:center">
-    <div class="badge">Делаю сайты под ключ</div>
-    <div class="hamb" id="hamb" aria-label="menu">☰</div>
-  </div>
-</header>
-
-<!-- боковое меню -->
-<div class="menu-panel" id="menu">
-  <strong style="color:#fff;font-size:18px">Навигация</strong>
-  <nav style="margin-top:12px">
-    <a href="#services">Услуги</a>
-    <a href="#pricing">Цены</a>
-    <a href="#portfolio">Портфолио</a>
-    <a href="#contacts">Контакты</a>
-  </nav>
-  <div style="margin-top:18px" class="muted">Номер и быстрый чат:</div>
-  <a href="https://wa.me/992011900303" target="_blank" rel="noreferrer">Написать в WhatsApp</a>
-  <a href="tel:+992011900303">Позвонить: +992 011 900 303</a>
-</div>
-
-<section class="hero">
-  <h1>Привет! Я Мубориз 👋</h1>
-  <p>Создаю красивые, быстрые и профессиональные сайты под ключ. Адаптирую под мобильные устройства, делаю удобный интерфейс и подключаю быстрый канал связи (WhatsApp).</p>
-  <a class="cta" href="#pricing">Посмотреть цены</a>
-</section>
-
-<div class="card-wrap">
-  <div class="card">
-    <h2 id="services">Что я делаю?</h2>
-    <p>Верстка сайтов, лендинги, интернет-магазины, дизайн под ключ и поддержка. Быстро, аккуратно и профессионально.</p>
-    <div class="grid" style="margin-top:18px">
-      <div class="service">
-        <h3>Верстка & адаптация</h3>
-        <p>Чистый код, адаптация под телефоны и быстрые загрузки.</p>
-      </div>
-      <div class="service">
-        <h3>Лендинги</h3>
-        <p>Конверсионный дизайн — продающие страницы для бизнеса.</p>
-      </div>
-      <div class="service">
-        <h3>Интернет-магазины</h3>
-        <p>Каталог, оплата, корзина — всё готово к продажам.</p>
-      </div>
-    </div>
-
-    <!-- Цены -->
-    <h2 id="pricing" style="margin-top:20px">Цены (пример)</h2>
-    <div class="pricing">
-      <div class="price-card">
-        <h4>Мини-сайт</h4>
-        <div class="price-amount">100 сомон</div>
-        <p>1 страница — контакт + пример работы. Быстро и дешево.</p>
-        <a class="btn-secondary" href="#contacts">Заказать</a>
-      </div>
-      <div class="price-card">
-        <h4>Нормальный сайт</h4>
-        <div class="price-amount">200-300 сомон</div>
-        <p>2–3 страницы: главная, услуги, контакты. Хорошая упаковка.</p>
-        <a class="btn-secondary" href="#contacts">Заказать</a>
-      </div>
-      <div class="price-card">
-        <h4>Полный сайт</h4>
-        <div class="price-amount">400+ сомон</div>
-        <p>5–10 страниц, галерея, админ-панель (по договорённости).</p>
-        <a class="btn-secondary" href="#contacts">Заказать</a>
-      </div>
-    </div>
-
-    <!-- Галерея / примеры -->
-    <h2 id="portfolio" style="margin-top:20px">Примеры (галерея)</h2>
-    <div class="gallery">
-      <!-- сюда можно положить свой muboriz.jpg в репозиторий — тогда он покажется -->
-      <img src="muboriz.jpg" alt="Пример 1" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=fac5a6d6b7e0f9d7b6fad0ec8d9b8f3e'">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=71c2a6f257e9172f2b9b6f3f48e9b7b4" alt="Пример 2">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=71c2a6f257e9172f2b9b6f3f48e9b7b4" alt="Пример 3">
-    </div>
-
-    <!-- Контакты -->
-    <h2 id="contacts" style="margin-top:20px">Контакты</h2>
-    <p class="muted">Напиши мне в WhatsApp или позвони — обычно отвечаю быстро.</p>
-    <p style="margin:10px 0">
-      <a class="cta" href="https://wa.me/992011900303" target="_blank" rel="noreferrer">Написать в WhatsApp</a>
-      <a class="btn-secondary" href="tel:+992011900303" style="margin-left:12px;background:#0b1220;color:#fff;border:1px solid rgba(255,255,255,0.04)">Позвонить</a>
-    </p>
-
-  </div>
-</div>
-
-<!-- Плавающие кнопки справа -->
-<div class="float-wrap" aria-hidden="false">
-  <div class="float wh" title="Написать в WhatsApp">
-    <a href="https://wa.me/992011900303" target="_blank" rel="noreferrer">💬</a>
-  </div>
-  <div class="float call" title="Позвонить">
-    <a href="tel:+992011900303">📞</a>
-  </div>
-</div>
-
-<footer>
-  <div>Muboriz Web Studio — профессиональная разработка сайтов</div>
-  <div style="margin-top:8px" class="muted">© <span id="year"></span> Muboriz — все права защищены</div>
-</footer>
-
-<script>
-  // год в футере
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // меню открыть/закрыть
-  const hamb = document.getElementById('hamb');
-  const menu = document.getElementById('menu');
-  hamb.addEventListener('click', ()=> menu.classList.toggle('open'));
-
-  // smooth scroll для ссылок навигации
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', (e)=>{
-      const target = document.querySelector(a.getAttribute('href'));
-      if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); menu.classList.remove('open'); }
-    });
-  });
-</script>
-
-</body>
-  </html>
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Сайты на заказ в городе Душанбе</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайты на заказ — Душанбе</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
             margin: 0;
-            padding: 0;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #f2f5f8;
+            color: #222;
         }
-        .header {
-            background: #4a90e2;
+
+        header {
+            background: linear-gradient(135deg, #0057ff, #00c8ff);
+            padding: 20px;
+            text-align: center;
             color: white;
-            padding: 40px 20px;
-            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background: white;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0057ff;
             font-weight: bold;
+            font-size: 18px;
+        }
+
+        .container {
+            padding: 25px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .block {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .block:hover {
+            transform: scale(1.02);
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #0057ff;
+        }
+
+        .price {
+            font-size: 23px;
+            font-weight: bold;
+            color: #00a000;
+            margin: 5px 0 15px 0;
+        }
+
+        img.preview {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0057ff;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* Кнопка WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 999;
         }
     </style>
 </head>
+
 <body>
 
-<div class="header">
-    Сайты на заказ в городе Душанбе
+<header>
+    <h1>Сайты на заказ в городе Душанбе</h1>
+    <p>Профессиональная разработка сайтов — быстро, красиво, недорого</p>
+</header>
+
+<nav>
+    <a href="#prices">Цены</a>
+    <a href="#examples">Примеры</a>
+    <a href="https://wa.me/992XXXXXXXXX" target="_blank">Связаться</a>
+</nav>
+
+<div class="container">
+
+    <div id="prices" class="block">
+        <div class="title">💰 Цены на создание сайтов</div>
+
+        <p class="price">Мини-сайт — 100 сомони</p>
+        <p>Одностраничный сайт, красивый дизайн, кнопки, фото, текст.</p>
+
+        <p class="price">Сайт 2–3 страницы — 200 сомони</p>
+        <p>Услуги, контакты, галерея, профессиональный стиль.</p>
+
+        <p class="price">Сайт 5–10 страниц — 400 сомони</p>
+        <p>Большой сайт, много фото, разделы, анимации, меню, кнопки WhatsApp.</p>
+    </div>
+
+    <div id="examples" class="block">
+        <div class="title">📸 Пример мини-сайта за 100 сомони</div>
+        <img class="preview" src="https://raw.githubusercontent.com/your-image-here.jpg" alt="Пример сайта">
+        <p>Так выглядит мини-сайт за 100 сомони.</p>
+    </div>
+
 </div>
+
+<footer>
+    © 2025 — Разработка сайтов в Душанбе
+</footer>
+
+<!-- WhatsApp button -->
+<a class="whatsapp-btn" href="https://wa.me/992XXXXXXXXX" target="_blank">📞</a>
 
 </body>
 </html>
-
-
-
-<style>
-    /* Основной текст — спокойный, тёмно-серый */
-    body {
-        color: #333;
-    }
-
-    /* Заголовки — чёткие, но не яркие */
-    h1, h2, h3, h4, h5, h6 {
-        color: #222 !important;
-    }
-
-    /* Уменьшаем яркость белых блоков */
-    .card, .section, div {
-        color: #444;
-    }
-
-    /* Убираем лишнюю прозрачность и пересвет */
-    * {
-        text-shadow: none !important;
-        filter: none !important;
-    }
-
-    /* Если есть белый текст — делаем его серым */
-    .white, .light-text {
-        color: #eaeaea !important;
-    }
-</style>
