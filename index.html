@@ -1,6 +1,112 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Premium</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: white;
+        overflow-x: hidden;
+    }
+
+    header {
+        background: #111;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid gold;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 36px;
+        color: gold;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 10px;
+    }
+
+    nav a {
+        color: gold;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: white;
+    }
+
+    .section {
+        display: none;
+        padding: 30px;
+    }
+
+    .active {
+        display: block;
+    }
+
+    h1 {
+        color: gold;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .info-box, .form-box {
+        border-left: 4px solid gold;
+        padding-left: 20px;
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 1.7;
+    }
+
+    input, textarea {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+        border: none;
+        font-size: 18px;
+    }
+
+    button {
+        background: gold;
+        border: none;
+        color: black;
+        padding: 12px 25px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: white;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Black Premium</h1>
+    <nav>
+        <a onclick="showSection('home')">Главная</a>
+        <a onclick="showSection('about')">Обо мне</a>
+        <a onclick="showSection('order')">Заказать сайт</<!DOCTYPE html>
+<html lang="ru">
+<head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Премиум сайты на заказ — Душанбе</title>
