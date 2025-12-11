@@ -1362,3 +1362,176 @@ function sendOrder() {
     border-radius:14px;
     padding:28px;
     box-shadow: 0 10px 30
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Premium</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: white;
+    }
+
+    /* Фон */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0a0a0a 0%, #000 40%, #111 100%);
+        z-index: -1;
+        opacity: 0.6;
+    }
+
+    header {
+        text-align: center;
+        padding: 25px 10px;
+        border-bottom: 2px solid gold;
+    }
+
+    header h1 {
+        color: gold;
+        margin: 0;
+        font-size: 36px;
+    }
+
+    nav {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    nav a {
+        color: gold;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 8px 14px;
+        border-radius: 4px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        background: gold;
+        color: black;
+    }
+
+    .section {
+        display: none;
+        padding: 30px 15px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .active {
+        display: block;
+    }
+
+    h2 {
+        color: gold;
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+
+    .box {
+        border-left: 4px solid gold;
+        padding-left: 15px;
+        margin-top: 20px;
+    }
+
+    input, textarea {
+        width: 100%;
+        margin-top: 12px;
+        padding: 12px;
+        font-size: 18px;
+        border-radius: 6px;
+        border: none;
+    }
+
+    button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 14px;
+        font-size: 22px;
+        font-weight: bold;
+        background: gold;
+        color: black;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: white;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>Black Premium</h1>
+    <nav>
+        <a onclick="showSection('home')">Главная</a>
+        <a onclick="showSection('about')">Обо мне</a>
+        <a onclick="showSection('order')">Сделать заказ</a>
+    </nav>
+</header>
+
+<div id="home" class="section active">
+    <h2>Добро пожаловать!</h2>
+    <p>Я создаю премиальные сайты.</p>
+</div>
+
+<div id="about" class="section">
+    <h2>Обо мне</h2>
+    <div class="box">
+        <p><b>Имя:</b> Муборчик</p>
+        <p><b>Профессия:</b> Создатель сайтов</p>
+        <p><b>Связь:</b> WhatsApp</p>
+    </div>
+</div>
+
+<div id="order" class="section">
+    <h2>Сделать заказ</h2>
+    <div class="box">
+        <input id="name" placeholder="Ваше имя">
+        <input id="phone" placeholder="Ваш номер">
+        <textarea id="details" rows="4" placeholder="О заказе"></textarea>
+
+        <button onclick="sendWhatsApp()">Отправить в WhatsApp</button>
+    </div>
+</div>
+
+<script>
+function showSection(id) {
+    document.querySelectorAll(".section").forEach(sec => sec.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+function sendWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let details = document.getElementById("details").value;
+
+    let msg = `Заказ:%0AИмя: ${name}%0AТелефон: ${phone}%0AДетали: ${details}`;
+    window.open(`https://wa.me/992011900303?text=${msg}`);
+}
+</script>
+
+</body>
+</html>
