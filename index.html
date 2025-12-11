@@ -581,3 +581,28 @@
 
 </body>
             </html>
+<script>
+function sendWhatsApp() {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const details = document.getElementById("details").value.trim();
+
+    // ← ВСТАВЬ СВОЙ НОМЕР БЕЗ ПЛЮСА, ТОЛЬКО ЦИФРЫ!
+    const yourNumber = "992000000000";
+
+    if (!name || !phone || !details) {
+        alert("Пожалуйста заполните все поля!");
+        return;
+    }
+
+    const message =
+        "🔥 НОВЫЙ ЗАКАЗ 🔥%0A" +
+        "Имя: " + name + "%0A" +
+        "Номер клиента: " + phone + "%0A" +
+        "Заказ: " + details;
+
+    const url = `https://wa.me/${yourNumber}?text=${message}`;
+
+    window.open(url, "_blank");
+}
+</script>
