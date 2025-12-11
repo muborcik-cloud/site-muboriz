@@ -1186,3 +1186,73 @@ function sendOrder() {
 
 </body>
 </html>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Мубориз — Профессиональная разработка сайтов</title>
+
+<style>
+  :root{
+    --bg:#0b0b0b;
+    --panel:#0f0f0f;
+    --accent:#ffd400; /* яркий жёлтый */
+    --muted:#9aa4b2;
+    --text:#eee;
+    --card:#111;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: Inter, Arial, sans-serif;
+    background:linear-gradient(180deg,#080808 0%, #0b0b0b 100%);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* Header / Nav */
+  header{
+    background:linear-gradient(90deg, rgba(255,212,0,0.06), rgba(255,212,0,0.03));
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:80;
+    border-bottom:1px solid rgba(255,212,0,0.06);
+  }
+  .topbar{
+    max-width:1000px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .brand{
+    font-weight:800;
+    letter-spacing:0.5px;
+    color:var(--text);
+    font-size:20px;
+  }
+  nav{display:flex; gap:18px; align-items:center;}
+  nav a{
+    color:var(--accent);
+    text-decoration:none;
+    font-weight:700;
+    padding:6px 8px;
+  }
+
+  /* Main container */
+  .container{
+    max-width:980px;
+    margin:28px auto;
+    padding:0 18px;
+  }
+
+  /* Card with white-ish panel look */
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+    border-radius:14px;
+    padding:28px;
+    box-shadow: 0 10px 30
