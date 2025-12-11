@@ -606,3 +606,29 @@ function sendWhatsApp() {
     window.open(url, "_blank");
 }
 </script>
+<form onsubmit="sendWhatsApp(event)">
+  <input type="text" id="name" placeholder="Ваше имя" required />
+  <input type="text" id="phone" placeholder="Ваш номер" required />
+  <textarea id="message" placeholder="Что вы хотите?" required></textarea>
+  <button type="submit">Отправить</button>
+</form>
+
+<script>
+  function sendWhatsApp(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
+
+    let text =
+      "📝 Новый заказ!%0A" +
+      "Имя: " + name + "%0A" +
+      "Телефон: " + phone + "%0A" +
+      "Сообщение: " + message;
+
+    let url = "https://wa.me/992011900303?text=" + text;
+
+    window.open(url, "_blank");
+  }
+</script>
