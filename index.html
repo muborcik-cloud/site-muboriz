@@ -248,3 +248,148 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой сайт</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0d0d0d;
+        color: white;
+    }
+
+    nav {
+        background: #111;
+        padding: 15px 25px;
+        display: flex;
+        gap: 30px;
+        border-bottom: 2px solid gold;
+    }
+
+    nav a {
+        color: gold;
+        text-decoration: none;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: white;
+        text-shadow: 0 0 12px gold;
+    }
+
+    .section {
+        display: none;
+        padding: 40px;
+    }
+
+    .active {
+        display: block;
+    }
+
+    h1 {
+        color: gold;
+        font-size: 42px;
+    }
+
+    .info-box, .form-box {
+        border-left: 4px solid gold;
+        padding-left: 20px;
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 1.7;
+    }
+
+    input, textarea {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+        border: none;
+        font-size: 18px;
+    }
+
+    button {
+        background: gold;
+        border: none;
+        color: black;
+        padding: 12px 25px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: white;
+    }
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a onclick="showSection('home')">Главная</a>
+    <a onclick="showSection('about')">Обо мне</a>
+    <a onclick="showSection('order')">Сделать заказ</a>
+</nav>
+
+<!-- Главная -->
+<div id="home" class="section active">
+    <h1>Добро пожаловать!</h1>
+    <p>Здесь я создаю профессиональные сайты на заказ.</p>
+</div>
+
+<!-- Обо мне -->
+<div id="about" class="section">
+    <h1>Обо мне</h1>
+    <div class="info-box">
+        <p><b>Имя:</b> Муборчик</p>
+        <p><b>Кто я:</b> Создатель профессиональных сайтов</p>
+        <p><b>Номер:</b> +992 00 000 00 00</p>
+        <p><b>Принимаю заказы:</b> WhatsApp</p>
+    </div>
+</div>
+
+<!-- ФОРМА ЗАКАЗА -->
+<div id="order" class="section">
+    <h1>Сделать заказ</h1>
+    <div class="form-box">
+        <p>Заполните форму, и я свяжусь с вами!</p>
+
+        <input id="name" type="text" placeholder="Ваше имя">
+        <input id="phone" type="text" placeholder="Ваш номер телефона">
+        <textarea id="details" rows="5" placeholder="Что хотите заказать?"></textarea>
+
+        <button onclick="sendWhatsApp()">Отправить заказ</button>
+    </div>
+</div>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+
+    function sendWhatsApp() {
+        let name = document.getElementById('name').value;
+        let phone = document.getElementById('phone').value;
+        let details = document.getElementById('details').value;
+
+        let message = `Новый заказ!%0A%0AИмя: ${name}%0AТелефон: ${phone}%0AЗаказ: ${details}`;
+        let yourNumber = "992000000000"; // ← СЮДА ВСТАВЬ СВОЙ НОМЕР БЕЗ +
+
+        window.open(`https://wa.me/${yourNumber}?text=${message}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
