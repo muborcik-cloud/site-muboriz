@@ -632,3 +632,118 @@ function sendWhatsApp() {
     window.open(url, "_blank");
   }
 </script>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Заказать сайт</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #0e0d0c;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: 
+      linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(0,0,0,0) 60%),
+      linear-gradient(225deg, rgba(255,215,0,0.15) 0%, rgba(0,0,0,0) 60%);
+    background-size: cover;
+  }
+
+  .form-container {
+    background: rgba(20, 20, 20, 0.85);
+    padding: 30px;
+    width: 350px;
+    border-radius: 18px;
+    border: 1px solid #d4af37;
+    box-shadow: 0 0 25px rgba(255,215,0,0.3);
+    backdrop-filter: blur(7px);
+  }
+
+  h2 {
+    text-align: center;
+    color: #ffd700;
+    margin-bottom: 20px;
+    font-size: 26px;
+    text-shadow: 0 0 10px #ffd700;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ffd700;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  input:focus, textarea:focus {
+    border-bottom: 2px solid white;
+    box-shadow: 0 5px 10px rgba(255,215,0,0.3);
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 18px;
+    background: #ffd700;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+  }
+
+  button:hover {
+    background: white;
+    box-shadow: 0 0 15px #ffd700;
+  }
+</style>
+
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Заказать сайт</h2>
+
+  <form onsubmit="sendWhatsApp(event)">
+    <input type="text" id="name" placeholder="Ваше имя" required />
+    <input type="text" id="phone" placeholder="Ваш номер" required />
+    <textarea id="message" placeholder="Что вы хотите?" rows="4" required></textarea>
+    <button type="submit">Отправить</button>
+  </form>
+</div>
+
+<script>
+  function sendWhatsApp(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let message = document.getElementById("message").value;
+
+    let text =
+      "📝 Новый заказ!%0A" +
+      "Имя: " + name + "%0A" +
+      "Телефон: " + phone + "%0A" +
+      "Сообщение: " + message;
+
+    let url = "https://wa.me/992011900303?text=" + text;
+
+    window.open(url, "_blank");
+  }
+</script>
+
+</body>
+</html>
