@@ -548,3 +548,41 @@ nav a:hover {
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Две страницы в одном файле</title>
+    <style>
+        section { display: none; padding: 20px; font-size: 22px; }
+        .active { display: block; }
+        nav a { margin-right: 20px; font-size: 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a onclick="showPage('home')">Главная</a>
+    <a onclick="showPage('page2')">Вторая страница</a>
+</nav>
+
+<section id="home" class="active">
+    <h1>Это главная страница</h1>
+    <p>Тут будет твой контент.</p>
+</section>
+
+<section id="page2">
+    <h1>Это твоя ВТОРАЯ страница</h1>
+    <p>Здесь можешь писать что хочешь.</p>
+</section>
+
+<script>
+function showPage(id) {
+    document.getElementById('home').classList.remove('active');
+    document.getElementById('page2').classList.remove('active');
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
