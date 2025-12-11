@@ -393,3 +393,191 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Мой сайт</title>
+
+<style>
+    /* ====== ЗОЛОТОЙ ФОН ====== */
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: white;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Линии */
+    body::before, body::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 150%;
+        height: 150%;
+        background: repeating-linear-gradient(
+            120deg,
+            rgba(255, 215, 0, 0.15) 0px,
+            rgba(255, 215, 0, 0.15) 2px,
+            transparent 6px,
+            transparent 12px
+        );
+        animation: moveLines 12s linear infinite;
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    body::after {
+        animation-duration: 18s;
+        opacity: 0.2;
+    }
+
+    @keyframes moveLines {
+        from { transform: translate(-10%, -10%) rotate(0deg); }
+        to   { transform: translate(10%, 10%) rotate(360deg); }
+    }
+
+    /* ====== МЕНЮ ====== */
+    nav {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px 25px;
+        display: flex;
+        gap: 30px;
+        border-bottom: 2px solid gold;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    nav a {
+        color: gold;
+        text-decoration: none;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: white;
+        text-shadow: 0 0 12px gold;
+    }
+
+    /* ======= КОНТЕНТ ======= */
+    .section {
+        display: none;
+        padding: 40px;
+        backdrop-filter: blur(3px);
+    }
+
+    .active {
+        display: block;
+    }
+
+    h1 {
+        color: gold;
+        font-size: 42px;
+    }
+
+    .info-box, .form-box {
+        background: rgba(0, 0, 0, 0.55);
+        padding: 20px;
+        border-left: 4px solid gold;
+        font-size: 20px;
+        line-height: 1.7;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        border-radius: 10px;
+    }
+
+    input, textarea {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 6px;
+        border: 2px solid gold;
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        font-size: 18px;
+    }
+
+    button {
+        background: gold;
+        border: none;
+        color: black;
+        padding: 12px 25px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: white;
+    }
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a onclick="showSection('home')">Главная</a>
+    <a onclick="showSection('about')">Обо мне</a>
+    <a onclick="showSection('order')">Сделать заказ</a>
+</nav>
+
+<!-- Главная -->
+<div id="home" class="section active">
+    <h1>Добро пожаловать!</h1>
+    <p>Я создаю премиальные сайты.</p>
+</div>
+
+<!-- Обо мне -->
+<div id="about" class="section">
+    <h1>Обо мне</h1>
+    <div class="info-box">
+        <p><b>Имя:</b> Муборчик</p>
+        <p><b>Специализация:</b> Создание дорогих профессиональных сайтов</p>
+        <p><b>Номер:</b> +992 00 000 00 00</p>
+        <p><b>Принимаю заказы через WhatsApp</p>
+    </div>
+</div>
+
+<!-- Форма заказа -->
+<div id="order" class="section">
+    <h1>Сделать заказ</h1>
+    <div class="form-box">
+        <p>Введите данные:</p>
+
+        <input id="name" type="text" placeholder="Ваше имя">
+        <input id="phone" type="text" placeholder="Ваш номер">
+        <textarea id="details" rows="5" placeholder="Что нужно сделать?"></textarea>
+
+        <button onclick="sendWhatsApp()">Отправить</button>
+    </div>
+</div>
+
+<script>
+    function showSection(id) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+
+    function sendWhatsApp() {
+        let name = document.getElementById('name').value;
+        let phone = document.getElementById('phone').value;
+        let details = document.getElementById('details').value;
+
+        let message = `Новый заказ!%0AИмя: ${name}%0AТелефон: ${phone}%0AЗаказ: ${details}`;
+        let num = "992000000000"; // ← вставь свой номер БЕЗ плюса
+
+        window.open(`https://wa.me/${num}?text=${message}`, '_blank');
+    }
+</script>
+
+</body>
+            </html>
