@@ -1,744 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Новый Проект</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #090909;
-  color: #f2f2f2;
-}
-
-.header {
-  padding: 20px;
-  text-align: center;
-  background: #000;
-  color: #f2c84b;
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: 1px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-.block {
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-.title {
-  font-size: 28px;
-  color: #f2c84b;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.text {
-  font-size: 18px;
-  color: #ccc;
-}
-</style>
-</head>
-<body>
-
-<div class="header">Мой Новый Профессиональный Сайт</div>
-
-<div class="container">
-
-  <div class="block">
-    <div class="title">Добро пожаловать</div>
-    <div class="text">
-      Здесь будет новый большой и красивый сайт.  
-      Пока что — чистая профессиональная заготовка.
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="title">Раздел №1</div>
-    <div class="text">Пока пусто — мы заполним позже.</div>
-  </div>
-
-  <div class="block">
-    <div class="title">Раздел №2</div>
-    <div class="text">Добавим всё, что захочешь.</div>
-  </div>
-
-</div>
-
-</body>
-</html><!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Black Premium — Мубориз</title>
-<meta name="description" content="Премиальные сайты на заказ — только Душанбе. Написать в WhatsApp или позвонить.">
 
 <style>
-:root{
-  --bg:#070707;
-  --panel:#0f0f0f;
-  --gold:#d4a537;
-  --muted:#bfc3c6;
-  --text:#e9e9e9;
-  --accent:#ffd76b;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:Inter, Arial, sans-serif;background:linear-gradient(180deg,#050505,#0b0b0b);color:var(--text);-webkit-font-smoothing:antialiased}
-.top-banner{
-  width:100%;background:#000;color:var(--gold);text-align:center;padding:14px 10px;font-weight:800;letter-spacing:1px;font-size:18px;position:fixed;top:0;left:0;z-index:9999;
-  box-shadow:0 4px 12px rgba(0,0,0,0.6);
-}
-.page-offset{height:56px} /* push content below banner */
-.header{
-  padding:22px 18px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;
-}
-.brand{font-weight:900;color:var(--gold);letter-spacing:1px;font-size:20px}
-nav{display:flex;gap:14px;align-items:center}
-nav a{color:var(--gold);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:8px}
-nav a:hover{background:rgba(212,165,55,0.08);color:#fff}
-.container{max-width:1200px;margin:28px auto;padding:0 18px}
-.hero{display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:18px 0}
-.hero-left{flex:1 1 560px}
-.h-title{font-size:44px;color:var(--gold);margin:0 0 8px;font-weight:900}
-.h-sub{color:var(--muted);font-size:18px;margin:0 0 18px}
-.cta{display:inline-block;background:var(--gold);color:#000;padding:12px 20px;border-radius:12px;font-weight:800;text-decoration:none}
-.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:14px;border:1px solid rgba(212,165,55,0.06);box-shadow:0 12px 30px rgba(0,0,0,0.6)}
-.side-card{flex:0 0 320px;min-width:260px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
-.section-title{color:var(--gold);font-size:26px;margin:0 0 12px}
-.box{background:#111;padding:18px;border-radius:12px;border:1px solid rgba(255,215,0,0.04);color:var(--muted)}
-.about{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-.photo{width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);box-shadow:0 10px 30px rgba(212,165,55,0.18)}
-.info{flex:1;min-width:260px}
-.info h3{margin:0 0 8px;color:var(--gold)}
-.info p{margin:6px 0;color:var(--muted);line-height:1.6}
-.form-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);font-size:16px;outline:none}
-textarea{min-height:120px;resize:vertical}
-.btn-primary{background:var(--gold);color:#000;padding:12px 18px;border-radius:10px;font-weight:800;border:none;cursor:pointer}
-.actions-fixed{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:999}
-.fab{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-weight:900;color:#000;background:var(--gold);box-shadow:0 10px 30px rgba(0,0,0,0.5)}
-.fab.wa{background:#25D366;color:#fff}
-.footer{padding:28px 18px;text-align:center;color:var(--muted);margin-top:36px;border-top:1px solid rgba(255,255,255,0.03)}
-@media(max-width:860px){
-  .h-title{font-size:32px}
-  .side-card{flex-basis:100%}
-  .header{padding:14px}
-  nav{display:none}
-}
+    body {
+        background: #000;
+        color: #FFD700;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Центрированная верхняя надпись */
+    .top-banner {
+        text-align: center;
+        padding: 12px;
+        font-size: 14px;
+        color: #FFD700;
+        opacity: 0.9;
+        letter-spacing: 1px;
+    }
+
+    /* Главное меню */
+    nav {
+        background: #000;
+        padding: 15px 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        margin-bottom: 25px;
+    }
+
+    nav a {
+        color: #FFD700;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        transition: 0.2s;
+    }
+
+    nav a:hover {
+        text-shadow: 0 0 10px #FFD700;
+    }
+
+    /* Универсальный блок */
+    .block {
+        background: #111;
+        padding: 20px;
+        margin: 20px auto;
+        width: 85%;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 215, 0, 0.4);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+
+    h1, h2 {
+        margin-top: 0;
+    }
+
+    .button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background: #FFD700;
+        color: #000;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+        margin-top: 40px;
+        font-size: 13px;
+    }
 </style>
+
 </head>
 <body>
 
-<!-- top banner -->
 <div class="top-banner">ЗАКАЗЫ ТОЛЬКО ПО ГОРОДУ ДУШАНБЕ</div>
-<div class="page-offset"></div>
 
-<!-- header -->
-<header class="header">
-  <div class="brand">Black Premium — Мубориз</div>
-  <nav>
+<nav>
     <a href="#home">Главная</a>
     <a href="#services">Услуги</a>
     <a href="#portfolio">Портфолио</a>
     <a href="#prices">Цены</a>
     <a href="#about">Обо мне</a>
-    <a href="#contact">Контакты</a>
-  </nav>
-</header>
-
-<main class="container" id="home">
-  <section class="hero">
-    <div class="hero-left">
-      <h1 class="h-title">Профессиональные сайты под ключ</h1>
-      <p class="h-sub">Делаю красивые, быстрые и продающие сайты. Работаю с клиентами из Душанбе — только по городу.</p>
-      <a class="cta" href="https://wa.me/992011900303?text=Здравствуйте!%20Хочу%20узнать%20о%20создании%20сайта">Заказать в WhatsApp</a>
-    </div>
-
-    <aside class="side-card card">
-      <h3 style="margin:0 0 8px;color:var(--gold)">Цены (ориентир)</h3>
-      <div style="color:var(--muted);margin-top:8px">Мини-сайт — 100 сомони<br>Сайт 2–3 стр. — 200 сомони<br>Большой сайт 5+ — 400+ сомони</div>
-      <div style="margin-top:12px">
-        <a class="btn-primary" href="tel:+992011900303">📞 Позвонить</a>
-      </div>
-    </aside>
-  </section>
-
-  <section id="services" style="margin-top:28px">
-    <h2 class="section-title">Услуги</h2>
-    <div class="grid">
-      <div class="box">Дизайн и верстка</div>
-      <div class="box">Адаптив под телефон</div>
-      <div class="box">Подключение WhatsApp / телефонии</div>
-      <div class="box">SEO-базовая оптимизация</div>
-    </div>
-  </section>
-
-  <section id="portfolio" style="margin-top:28px">
-    <h2 class="section-title">Портфолио – примеры</h2>
-    <div class="grid">
-      <div class="box">Пример проекта 1 — мини-сайт</div>
-      <div class="box">Пример проекта 2 — лендинг</div>
-      <div class="box">Пример проекта 3 — корпоративный</div>
-    </div>
-  </section>
-
-  <section id="prices" style="margin-top:28px">
-    <h2 class="section-title">Прайс</h2>
-    <div class="card">
-      <div class="price-grid" style="display:flex;gap:12px;flex-wrap:wrap;">
-        <div style="flex:1 1 180px" class="box"><strong>Мини-сайт</strong><div style="margin-top:8px;color:var(--muted)">100 сомони</div></div>
-        <div style="flex:1 1 180px" class="box"><strong>2–3 страницы</strong><div style="margin-top:8px;color:var(--muted)">200 сомони</div></div>
-        <div style="flex:1 1 180px" class="box"><strong>Большой сайт</strong><div style="margin-top:8px;color:var(--muted)">400+ сомони</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" style="margin-top:28px">
-    <h2 class="section-title">Обо мне</h2>
-    <div class="card about">
-      <img src="myphoto.jpg" alt="Моё фото" class="photo" onerror="this.style.display='none'">
-      <div class="info">
-        <h3>Мубориз</h3>
-        <p><strong>Кто я:</strong> веб-разработчик, создаю сайты под ключ.</p>
-        <p><strong>Что делаю:</strong> лендинги, корпоративные сайты, интернет-магазины, настройка WhatsApp.</p>
-        <p><strong>Где принимаю заказы:</strong> только город Душанбе.</p>
-        <p style="margin-top:8px;color:var(--muted)"><strong>Номер:</strong> +992 011 900 303</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" style="margin-top:28px">
-    <h2 class="section-title">Контакты</h2>
-    <div class="card">
-      <p style="color:var(--muted)">Есть вопрос или хотите заказать сайт? Напишите в WhatsApp или позвоните.</p>
-
-      <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;">
-        <a class="btn-primary" href="https://wa.me/992011900303?text=Здравствуйте!%20Хочу%20заказать%20сайт">Написать в WhatsApp</a>
-        <a class="btn-primary" href="tel:+992011900303">Позвонить</a>
-      </div>
-
-      <div style="margin-top:18px">
-        <form onsubmit="event.preventDefault(); sendOrderForm();">
-          <input id="o-name" placeholder="Ваше имя" style="max-width:420px">
-          <input id="o-phone" placeholder="Номер (например 992011900303)" style="max-width:420px">
-          <textarea id="o-text" placeholder="Коротко опишите задачу" style="max-width:420px"></textarea>
-          <button class="btn-primary" type="submit">Отправить заявку в WhatsApp</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">© 2025 Black Premium — Мубориз — Заказ только по городу Душанбе</footer>
-</main>
-
-<!-- floating actions -->
-<div class="actions-fixed">
-  <a class="fab wa" href="https://wa.me/992011900303?text=Здравствуйте!%20Есть%20вопрос" target="_blank" title="Написать в WhatsApp">💬</a>
-  <a class="fab" href="tel:+992011900303" title="Позвонить">📞</a>
-</div>
-
-<script>
-/* form sends message to your WhatsApp number (opens chat) */
-function sendOrderForm(){
-  const name = encodeURIComponent(document.getElementById('o-name').value || 'Без имени');
-  const phone = (document.getElementById('o-phone').value || '').replace(/\D/g,'');
-  const text = encodeURIComponent(document.getElementById('o-text').value || 'Описание отсутствует');
-  const target = phone && phone.length>=6 ? phone : '992011900303';
-  const msg = `Новая заявка%0AИмя:%20${name}%0AТелефон:%20${phone}%0A%0AОписание:%20${text}`;
-  window.open(`https://wa.me/${target}?text=${msg}`, '_blank');
-}
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Black Premium — Второй сайт</title>
-
-<style>
-/* Основной фон */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: #e6e6e6;
-    overflow-x: hidden;
-}
-
-/* Анимированное золотое свечение */
-@keyframes glow {
-    0% { text-shadow: 0 0 5px #c79d2f; }
-    100% { text-shadow: 0 0 20px #ffd36a; }
-}
-
-/* Шапка */
-header {
-    background: linear-gradient(90deg, #000, #111);
-    padding: 20px 0;
-    text-align: center;
-    color: #f2c84b;
-    font-size: 32px;
-    font-weight: 900;
-    letter-spacing: 3px;
-    animation: glow 2s infinite alternate;
-}
-
-/* Меню */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
-}
-
-nav a {
-    color: #f2c84b;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #fff;
-    transform: scale(1.1);
-}
-
-/* Контент */
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 20px;
-}
-
-.block {
-    background: #0d0d0d;
-    border: 1px solid #2e2e2e;
-    border-radius: 14px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 20px rgba(242,200,75,0.1);
-    transition: 0.4s;
-}
-
-.block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 40px rgba(242,200,75,0.25);
-}
-
-.title {
-    font-size: 26px;
-    color: #f2c84b;
-    margin-bottom: 10px;
-    font-weight: 800;
-}
-
-.text {
-    font-size: 18px;
-    color: #ccc;
-    line-height: 1.6;
-}
-
-/* Кнопка "Подписаться на мой второй сайт" */
-.subscribe-btn {
-    display: inline-block;
-    padding: 15px 25px;
-    margin-top: 10px;
-    background: #f2c84b;
-    color: #000;
-    font-weight: 900;
-    font-size: 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.subscribe-btn:hover {
-    background: #ffe089;
-    transform: scale(1.05);
-}
-</style>
-</head>
-
-<body>
-
-<header>BLACK PREMIUM — МОЙ ВТОРОЙ САЙТ</header>
-
-<nav>
-    <a href="#">Главная</a>
-    <a href="#">Обо мне</a>
-    <a href="#">Услуги</a>
-    <a href="#">Контакты</a>
+    <a href="#contacts">Контакты</a>
 </nav>
 
-<div class="container">
-
-    <div class="block">
-        <div class="title">Добро пожаловать</div>
-        <div class="text">
-            Это мой новый второй профессиональный сайт в стиле Black Premium.
-        </div>
-
-        <a class="subscribe-btn" href="#">Подписывайтесь на мой второй сайт</a>
-    </div>
-
-    <div class="block">
-        <div class="title">Почему мой сайт — профессиональный?</div>
-        <div class="text">
-            — Чёрно-золотой стиль<br>
-            — Премиум анимации<br>
-            — Меню<br>
-            — Красивый интерфейс<br>
-            — Всё выглядит дорого и идеально<br>
-        </div>
-    </div>
-
+<!-- Главный блок -->
+<div class="block" id="home">
+    <h1>Профессиональный Сайт</h1>
+    <p>Здесь будет новый большой и красивый сайт. Пока что — профессиональная заготовка.</p>
 </div>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muboriz Ultra — Профессиональный сайт</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background: #111;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: gold;
-            border-bottom: 2px solid gold;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .block {
-            background: #111;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border: 1px solid gold;
-            box-shadow: 0 0 15px gold;
-            transition: 0.4s;
-        }
-
-        .block:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 25px gold;
-        }
-
-        h2 {
-            color: gold;
-            margin-top: 0;
-        }
-
-        .whatsapp-btn {
-            display: block;
-            margin-top: 15px;
-            padding: 12px;
-            background: gold;
-            color: black;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .whatsapp-btn:hover {
-            background: #ffdd55;
-        }
-
-        .photo {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid gold;
-            object-fit: cover;
-        }
-    </style>
-</head>
-<body>
-
-<header>🌟 MUBORIZ ULTRA — ПРОФЕССИОНАЛЬНЫЙ САЙТ</header>
-
-<div class="container">
-
-    <div class="block" style="text-align:center;">
-        <h2>Кто я</h2>
-        <img src="PHOTO.jpg" alt="Моё фото" class="photo">
-        <p>Меня зовут Мубориз. Я создаю красивые, современные и профессиональные сайты под заказ.</p>
-        <p>Работаю быстро, качественно и надёжно.</p>
-    </div>
-
-    <div class="block">
-        <h2>Что я делаю</h2>
-        <p>• Создание сайтов любой сложности</p>
-        <p>• Разработка дизайна</p>
-        <p>• Настройка Vercel</p>
-        <p>• Подключение WhatsApp и звонков</p>
-    </div>
-
-    <div class="block">
-        <h2>Заказы только в городе Душанбе</h2>
-        <p>Работаю только с клиентами из города Душанбе.</p>
-    </div>
-
-    <div class="block">
-        <h2>Связаться со мной</h2>
-        <p>Мой номер: <b>+992 ___ __ __ __</b></p>
-
-        <a class="whatsapp-btn" href="https://wa.me/992000000000" target="_blank">
-            Написать в WhatsApp
-        </a>
-    </div>
-
-</div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная страница</title>
-</head>
-<body>
-
-<h1>Это твой новый второй сайт — Главная страница</h1>
-
-<p>Нажми ниже, чтобы перейти на вторую страницу:</p>
-
-<a href="page2.html" style="font-size:22px;">Перейти на вторую страницу</a>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Две страницы в одном файле</title>
-    <style>
-        section { display: none; padding: 20px; font-size: 22px; }
-        .active { display: block; }
-        nav a { margin-right: 20px; font-size: 20px; cursor: pointer; }
-    </style>
-</head>
-<body>
-
-<nav>
-    <a onclick="showPage('home')">Главная</a>
-    <a onclick="showPage('page2')">Вторая страница</a>
-</nav>
-
-<section id="home" class="active">
-    <h1>Это главная страница</h1>
-    <p>Тут будет твой контент.</p>
-</section>
-
-<section id="page2">
-    <h1>Это твоя ВТОРАЯ страница</h1>
-    <p>Здесь можешь писать что хочешь.</p>
-</section>
-
-<script>
-function showPage(id) {
-    document.getElementById('home').classList.remove('active');
-    document.getElementById('page2').classList.remove('active');
-    document.getElementById(id).classList.add('active');
-}
-</script>
-
-</body>
-</html>
-<a href="page2.html" style="
-    display:block;
-    margin:40px auto;
-    width:max-content;
-    font-size:24px;
-    padding:10px 20px;
-    background:black;
-    color:white;
-    border-radius:8px;
-    text-decoration:none;
-">
-    👉 Перейти на вторую страницу (Muboriz Ultra)
-</a>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-<meta charset="UTF-8">
-<title>Muboriz Ultra</title>
-<style>
-    body { font-family: Arial; margin: 20px; }
-    .page { display: none; }
-    .active { display: block; }
-    .menu { margin-bottom: 20px; }
-    .menu button {
-        padding: 10px 20px;
-        font-size: 18px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-</style>
-<script>
-function showPage(pageId) {
-    document.getElementById("page1").classList.remove("active");
-    document.getElementById("page2").classList.remove("active");
-    document.getElementById(pageId).classList.add("active");
-}
-</script>
-</head>
-
-<body>
-
-<div class="menu">
-    <button onclick="showPage('page1')">🏠 Главная</button>
-    <button onclick="showPage('page2')">⚡ Muboriz Ultra</button>
-</div>
-
-<!-- Страница 1 -->
-<div id="page1" class="page active">
-    <h1>Главная страница</h1>
-    <p>Это твой основной сайт.</p>
-</div>
-
-<!-- Страница 2 -->
-<div id="page2" class="page">
-    <h1>Muboriz Ultra — Вторая страница</h1>
-    <p>Эта страница пустая. Мы можем её заполнить, как ты хочешь.</p>
-</div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MuBoriz Ultra</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #000;
-            color: #fff;
-        }
-
-        /* Шапка */
-        header {
-            background: #111;
-            padding: 20px;
-            text-align: center;
-            font-size: 26px;
-            font-weight: bold;
-            color: #FFD700;
-            box-shadow: 0 0 20px #FFD700;
-        }
-
-        /* Главный блок */
-        .section {
-            margin: 20px;
-            padding: 20px;
-            background: #1a1a1a;
-            border-radius: 15px;
-            box-shadow: 0 0 25px #FFD700;
-        }
-
-        .section h2 {
-            margin-top: 0;
-            color: #FFD700;
-            font-size: 22px;
-        }
-
-        .section p {
-            color: #ccc;
-            font-size: 17px;
-        }
-
-        /* Кнопки */
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 22px;
-            background: #FFD700;
-            color: #000;
-            border-radius: 10px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 0 15px #FFD700;
-            transition: 0.2s;
-        }
-
-        .btn:hover {
-            transform: scale(1.07);
-            box-shadow: 0 0 25px #FFD700;
-        }
-    </style>
-</head>
-<body>
-
-<header>MuBoriz Ultra — Профессиональный Сайт</header>
-
-<div class="section">
-    <h2>Добро пожаловать</h2>
-    <p>
-        Это ваш новый профессиональный сайт уровня PRO.  
-        Всё готово — дизайн, структура, стили.
-    </p>
-    <a class="btn" href="#">Подробнее</a>
-</div>
-
-<div class="section">
+<!-- Раздел 1 -->
+<div class="block">
     <h2>Раздел №1</h2>
-    <p>Здесь вы сможете добавить услуги, фото работ, описание или всё что нужно.</p>
+    <p>Пока пусто — мы заполним позже.</p>
 </div>
 
-<div class="section">
+<!-- Раздел 2 -->
+<div class="block">
     <h2>Раздел №2</h2>
-    <p>Сделаем полностью настраиваемым. Готов добавить что захочешь.</p>
+    <p>Добавим всё, что захочешь.</p>
 </div>
 
-<div class="section">
-    <h2>Контакты</h2>
-    <p>Добавим Telegram, WhatsApp, Instagram — что скажешь.</p>
+<!-- Услуги -->
+<div class="block" id="services">
+    <h2>Профессиональные сайты под ключ</h2>
+    <p>Делаю красивые и продающие сайты. Работаю в Душанбе — только по городу.</p>
+    <a class="button" href="https://wa.me/">Заказать в WhatsApp</a>
 </div>
+
+<!-- Цены -->
+<div class="block" id="prices">
+    <h2>Цены</h2>
+    <p>Мини-сайт — 100 сомони<br>Сайт 2–3 стр — 200 сомони<br>Большой сайт 5+ — 400+ сомони</p>
+    <a class="button" href="tel:+992000000000">Позвонить</a>
+</div>
+
+<!-- Второй сайт -->
+<div class="block">
+    <h2>Black Premium — Мой второй сайт</h2>
+</div>
+
+<footer>
+    © 2025 Black Premium — Мубориз
+</footer>
 
 </body>
 </html>
