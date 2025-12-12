@@ -599,3 +599,50 @@ function showPage(id) {
 ">
     👉 Перейти на вторую страницу (Muboriz Ultra)
 </a>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Muboriz Ultra</title>
+<style>
+    body { font-family: Arial; margin: 20px; }
+    .page { display: none; }
+    .active { display: block; }
+    .menu { margin-bottom: 20px; }
+    .menu button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+</style>
+<script>
+function showPage(pageId) {
+    document.getElementById("page1").classList.remove("active");
+    document.getElementById("page2").classList.remove("active");
+    document.getElementById(pageId).classList.add("active");
+}
+</script>
+</head>
+
+<body>
+
+<div class="menu">
+    <button onclick="showPage('page1')">🏠 Главная</button>
+    <button onclick="showPage('page2')">⚡ Muboriz Ultra</button>
+</div>
+
+<!-- Страница 1 -->
+<div id="page1" class="page active">
+    <h1>Главная страница</h1>
+    <p>Это твой основной сайт.</p>
+</div>
+
+<!-- Страница 2 -->
+<div id="page2" class="page">
+    <h1>Muboriz Ultra — Вторая страница</h1>
+    <p>Эта страница пустая. Мы можем её заполнить, как ты хочешь.</p>
+</div>
+
+</body>
+</html>
