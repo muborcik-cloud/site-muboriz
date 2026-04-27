@@ -2,207 +2,85 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Black Premium — Мубориз</title>
+<title>Mini Craft</title>
 
 <style>
-    body {
-        background: #000;
-        color: #FFD700;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
+body {
+  margin:0;
+  background:#87CEEB;
+  font-family:Arial;
+  text-align:center;
+}
 
-    /* Центрированная верхняя надпись */
-    .top-banner {
-        text-align: center;
-        padding: 12px;
-        font-size: 14px;
-        color: #FFD700;
-        opacity: 0.9;
-        letter-spacing: 1px;
-    }
+#toolbar {
+  background:#333;
+  color:white;
+  padding:10px;
+}
 
-    /* Главное меню */
-    nav {
-        background: #000;
-        padding: 15px 0;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-        margin-bottom: 25px;
-    }
+#game {
+  display:grid;
+  grid-template-columns: repeat(20, 30px);
+  justify-content:center;
+  margin-top:10px;
+}
 
-    nav a {
-        color: #FFD700;
-        margin: 0 15px;
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        transition: 0.2s;
-    }
+.cell {
+  width:30px;
+  height:30px;
+  border:1px solid #ccc;
+  background:#7CFC00;
+}
 
-    nav a:hover {
-        text-shadow: 0 0 10px #FFD700;
-    }
+.grass { background:#7CFC00; }
+.dirt { background:#8B4513; }
+.wood { background:#A0522D; }
+.stone { background:#808080; }
 
-    /* Универсальный блок */
-    .block {
-        background: #111;
-        padding: 20px;
-        margin: 20px auto;
-        width: 85%;
-        border-radius: 15px;
-        border: 1px solid rgba(255, 215, 0, 0.4);
-        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-    }
-
-    h1, h2 {
-        margin-top: 0;
-    }
-
-    .button {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 15px;
-        background: #FFD700;
-        color: #000;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    footer {
-        text-align: center;
-        padding: 20px;
-        color: #777;
-        margin-top: 40px;
-        font-size: 13px;
-    }
+.selected {
+  outline:3px solid yellow;
+}
 </style>
-
 </head>
+
 <body>
 
-<div class="top-banner">ЗАКАЗЫ ТОЛЬКО ПО ГОРОДУ ДУШАНБЕ</div>
-
-<nav>
-    <a href="#home">Главная</a>
-    <a href="#services">Услуги</a>
-    <a href="#portfolio">Портфолио</a>
-    <a href="#prices">Цены</a>
-    <a href="#about">Обо мне</a>
-    <a href="#contacts">Контакты</a>
-</nav>
-
-<!-- Главный блок -->
-<div class="block" id="home">
-    <h1>Профессиональный Сайт</h1>
-    <p>Здесь будет новый большой и красивый сайт. Пока что — профессиональная заготовка.</p>
+<div id="toolbar">
+  Выбери блок:
+  <button onclick="selectBlock('grass')">Трава</button>
+  <button onclick="selectBlock('dirt')">Земля</button>
+  <button onclick="selectBlock('wood')">Дерево</button>
+  <button onclick="selectBlock('stone')">Камень</button>
+  <button onclick="selectBlock('erase')">❌ Удалить</button>
 </div>
 
-<!-- Раздел 1 -->
-<div class="block">
-    <h2>Раздел №1</h2>
-    <p>Пока пусто — мы заполним позже.</p>
-</div>
+<div id="game"></div>
 
-<!-- Раздел 2 -->
-<div class="block">
-    <h2>Раздел №2</h2>
-    <p>Добавим всё, что захочешь.</p>
-</div>
+<script>
+const game = document.getElementById("game");
+let selected = "grass";
 
-<!-- Услуги -->
-<div class="block" id="services">
-    <h2>Профессиональные сайты под ключ</h2>
-    <p>Делаю красивые и продающие сайты. Работаю в Душанбе — только по городу.</p>
-    <a class="button" href="https://wa.me/">Заказать в WhatsApp</a>
-</div>
+// создаём поле
+for(let i=0;i<400;i++){
+  const cell = document.createElement("div");
+  cell.className = "cell";
 
-<!-- Цены -->
-<div class="block" id="prices">
-    <h2>Цены</h2>
-    <p>Мини-сайт — 100 сомони<br>Сайт 2–3 стр — 200 сомони<br>Большой сайт 5+ — 400+ сомони</p>
-    <a class="button" href="tel:+992011900303">Позвонить</a>
-</div>
+  cell.onclick = () => {
+    if(selected === "erase"){
+      cell.className = "cell";
+    } else {
+      cell.className = "cell " + selected;
+    }
+  };
 
-<!-- Второй сайт -->
-<div class="block">
-    <h2>Black Premium — Мой второй сайт</h2>
-</div>
+  game.appendChild(cell);
+}
 
-<footer>
-    © 2025 Black Premium — Мубориз
-</footer>
+// выбор блока
+function selectBlock(type){
+  selected = type;
+}
+</script>
 
 </body>
 </html>
-<a href="https://wa.me/992011900303" 
-   target="_blank" 
-   style="
-      display:inline-block;
-      background:#25D366;
-      color:white;
-      padding:12px 20px;
-      border-radius:10px;
-      font-size:18px;
-      font-weight:600;
-      text-decoration:none;
-      box-shadow:0 0 15px #25D366;
-   ">
-   Написать в WhatsApp
-</a>
-<a href="https://wa.me/992XXXXXXXXX" target="_blank"
-   style="
-      display:flex;
-      align-items:center;
-      gap:12px;
-      background:linear-gradient(90deg, #1fbf4c, #25d366);
-      color:white;
-      padding:14px 24px;
-      border-radius:14px;
-      font-size:20px;
-      font-weight:700;
-      text-decoration:none;
-      box-shadow:0 0 25px rgba(37,211,102,0.6);
-      transition:0.3s;
-   "
-   onmouseover="this.style.transform='scale(1.05)'"
-   onmouseout="this.style.transform='scale(1)'"
->
-   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-        style="width:28px;height:28px;">
-   Написать в WhatsApp
-</a>
-<section style="
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
-    background: #111;
-    border: 2px solid gold;
-    border-radius: 15px;
-    box-shadow: 0 0 25px rgba(255,215,0,0.3);
-    color: white;
-    font-family: Arial, sans-serif;
-    line-height: 1.7;
-">
-    <h2 style="
-        color: gold;
-        font-size: 32px;
-        margin-bottom: 20px;
-        text-align:center;
-    ">ОБО МНЕ</h2>
-
-    <p style="font-size: 22px; margin: 0 0 15px;">
-        <strong>Кто я:</strong> Я Мубориз.
-    </p>
-
-    <p style="font-size: 22px; margin: 0 0 15px;">
-        <strong>Что я делаю:</strong> Создаю людям профессиональные, красивые и современные сайты.
-    </p>
-
-    <p style="font-size: 22px; margin: 0 0 15px;">
-        <strong>Мой номер для связи:</strong> <span style="color: gold; font-weight: bold;">☎️ 992 011 900 303</span>
-    </p>
-</section>
